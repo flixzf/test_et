@@ -193,16 +193,10 @@ const CodeSplitter = {
      * 초기화 함수
      */
     init: function() {
-        // 현재 화면에 필요한 모듈 로드
-        const currentScreen = document.querySelector('.screen.active')?.id?.replace('-screen', '') || 'start';
-        this.loadScreenModules(currentScreen);
-        
-        // 다음 화면 사전 로드
-        this.preloadNextScreen(currentScreen);
-        
-        // 중요 리소스 사전 로드
-        if (currentScreen === 'start') {
-            this.preloadCriticalResources();
+        // 시작 화면에서 필요한 모듈을 즉시 로드
+        if (document.querySelector('#start-screen.active')) {
+            this.loadModule('questionModule', 'assets/js/questions.js');
+            this.loadModule('scoreCalculator', 'assets/js/score-calculator.js');
         }
         
         console.log('코드 분할 및 지연 로딩 모듈 초기화 완료');
