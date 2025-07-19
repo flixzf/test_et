@@ -92,7 +92,10 @@
     - _요구사항: 5.2_
 
 - [ ] 5. AI 모델 통합
-  - [x] 5.1 TensorFlow.js 및 Teachable Machine 설정
+  - [x] 5.1 TensorFlow.js 설정 (Teachable Machine 제거)
+
+
+
 
 
 
@@ -108,7 +111,7 @@
 
 
     - TensorFlow.js 라이브러리 통합
-    - Teachable Machine 모델 로드 기능 구현
+    - Teachable Machine 의존성 제거
     - 모델 초기화 및 오류 처리 구현
     - _요구사항: 6.2_
   
