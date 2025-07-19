@@ -58,6 +58,13 @@ function isTestInProgress() {
  * 설문 시작
  */
 function startSurvey() {
+    // questions 변수가 정의되었는지 확인
+    if (typeof questions === 'undefined') {
+        console.error('questions 변수가 정의되지 않았습니다.');
+        alert('질문 데이터를 불러오는 중 오류가 발생했습니다. 페이지를 새로고침해 주세요.');
+        return;
+    }
+    
     // 시작 화면 숨기기
     $('#start-screen').removeClass('active');
     
