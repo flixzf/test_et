@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Code Cleanup and Documentation Monitor",
+  "description": "Monitors code changes to identify unused code and ensures README.md is updated with file relationships and function details",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.html",
+      "*.js",
+      "*.css",
+      "README.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "I noticed changes to the codebase. Please help with:\n1. Identifying any unused or obsolete code that should be removed\n2. Checking if any files are no longer needed and can be deleted\n3. Ensuring the README.md accurately describes:\n   - The relationships between all files\n   - How functions operate\n   - Current project structure\n   \nPlease provide specific recommendations for cleanup and documentation improvements."
+  }
+}

@@ -38,8 +38,48 @@ const CodeSplitter = {
             
             script.onload = () => {
                 console.log(`모듈 로드 완료: ${moduleName}`);
-                // 전역 네임스페이스에서 모듈 찾기
-                const moduleObject = window[moduleName] || {};
+                
+                // 모듈 이름에 따라 적절한 전역 객체 생성
+                let moduleObject;
+                
+                if (moduleName === 'questionModule') {
+                    // questions.js 파일이 로드된 경우
+                    moduleObject = {
+                        questions: window.questions || [],
+                        QUESTION_CATEGORIES: window.QUESTION_CATEGORIES || {},
+                        PERSONALITY_TYPES: window.PERSONALITY_TYPES || {},
+                        personalityCharacteristics: window.personalityCharacteristics || {},
+                        personalityDescriptions: window.personalityDescriptions || {},
+                        getQuestions: function() { return this.questions; }
+                    };
+                    window.questionModule = moduleObject;
+                } 
+                else if (moduleName === 'scoreCalculator') {
+                    // score-calculator.js 파일이 로드된 경우
+                    moduleObject = {
+                        calculateSurveyResult: window.calculateSurveyResult || function(){},
+                        combineResults: window.combineResults || function(){},
+                        determinePersonalityType: window.determinePersonalityType || function(){},
+                        calculateScores: function(responses) {
+                            return this.calculateSurveyResult(responses);
+                        },
+                        getMockAnalysisResult: function() {
+                            return {
+                                tetoScore: 70,
+                                egenScore: 30,
+                                masculinityScore: 65,
+                                femininityScore: 35,
+                                confidence: 0.8
+                            };
+                        }
+                    };
+                    window.scoreCalculator = moduleObject;
+                }
+                else {
+                    // 기타 모듈의 경우 전역 네임스페이스에서 찾기
+                    moduleObject = window[moduleName] || {};
+                }
+                
                 this.loadedModules[moduleName] = moduleObject;
                 resolve(moduleObject);
             };
