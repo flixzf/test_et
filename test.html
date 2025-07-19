@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테토-에겐 성격 유형 테스트 - 테스트 모드</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .test-header h1 {
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+        
+        .test-header p {
+            color: #6c757d;
+        }
+        
+        .test-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="test-container">
+            <div class="test-header">
+                <h1>테토-에겐 성격 유형 테스트</h1>
+                <p>테스트 모드</p>
+            </div>
+            
+            <div class="test-nav">
+                <a href="index.html" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left"></i> 메인으로 돌아가기
+                </a>
+            </div>
+            
+            <div id="test-ui-container"></div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- 애플리케이션 모듈 -->
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/score-calculator.js"></script>
+    <script src="assets/js/ai-model.js"></script>
+    
+    <!-- 테스트 프레임워크 -->
+    <script src="assets/js/test-framework.js"></script>
+    
+    <script>
+        // 페이지 로드 시 테스트 UI 생성
+        document.addEventListener('DOMContentLoaded', function() {
+            const testUIContainer = document.getElementById('test-ui-container');
+            const testUI = window.testFramework.createTestUI();
+            testUIContainer.appendChild(testUI);
+        });
+    </script>
+</body>
+</html>

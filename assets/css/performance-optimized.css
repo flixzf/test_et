@@ -1,0 +1,142 @@
+/**
+ * 테토-에겐 성격 유형 테스트 성능 최적화 CSS
+ * 
+ * 이 파일은 저사양 기기에서의 성능을 최적화하기 위한 CSS 규칙을 포함합니다.
+ * 성능 최적화 모듈에서 저사양 기기로 감지되면 이 스타일이 적용됩니다.
+ */
+
+/* 저사양 기기에서 애니메이션 최적화 */
+.low-performance-device .animate__animated {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    transition-duration: 0s !important;
+}
+
+/* 필수 애니메이션만 유지 */
+.low-performance-device .animate__animated.essential-animation {
+    animation-duration: 0.5s !important;
+}
+
+/* 그림자 효과 최적화 */
+.low-performance-device .shadow {
+    box-shadow: none !important;
+}
+
+.low-performance-device .card {
+    box-shadow: none !important;
+}
+
+/* 트랜지션 효과 최적화 */
+.low-performance-device * {
+    transition: none !important;
+}
+
+/* 배경 그라데이션 최적화 */
+.low-performance-device .gradient-bg {
+    background: #f8f9fa !important;
+}
+
+/* 이미지 렌더링 최적화 */
+.low-performance-device img {
+    image-rendering: auto;
+}
+
+/* 스크롤 최적화 */
+.low-performance-device {
+    scroll-behavior: auto !important;
+}
+
+/* 미디어 쿼리를 사용한 모바일 최적화 */
+@media (max-width: 768px) {
+    /* 모바일에서 불필요한 애니메이션 비활성화 */
+    .animate__animated {
+        animation-duration: 0.5s !important;
+    }
+    
+    /* 모바일에서 무거운 배경 효과 제거 */
+    .bg-pattern {
+        background-image: none !important;
+    }
+    
+    /* 모바일에서 폰트 크기 최적화 */
+    body {
+        font-size: 14px !important;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    /* 모바일에서 여백 최적화 */
+    .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    
+    /* 모바일에서 버튼 크기 최적화 */
+    .btn {
+        padding: 0.375rem 0.75rem !important;
+    }
+    
+    /* 모바일에서 이미지 크기 최적화 */
+    img.img-fluid {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* 저사양 기기에서 이미지 최적화 */
+.low-performance-device img.img-fluid {
+    max-width: 90% !important;
+    height: auto !important;
+}
+
+/* 저사양 기기에서 폰트 최적화 */
+.low-performance-device {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+/* 저사양 기기에서 스크롤 최적화 */
+.low-performance-device .modal-body {
+    -webkit-overflow-scrolling: auto !important;
+    overflow-y: auto !important;
+}
+
+/* 저사양 기기에서 불필요한 효과 제거 */
+.low-performance-device .btn:hover {
+    transform: none !important;
+}
+
+/* 저사양 기기에서 애니메이션 효과 제거 */
+.low-performance-device .animate__pulse {
+    animation: none !important;
+}
+
+/* 저사양 기기에서 결과 화면 최적화 */
+.low-performance-device .result-container {
+    padding: 10px !important;
+}
+
+/* 저사양 기기에서 진행 바 애니메이션 최적화 */
+.low-performance-device .progress-bar {
+    transition: none !important;
+}
+
+/* 저사양 기기에서 모달 애니메이션 최적화 */
+.low-performance-device .modal.fade .modal-dialog {
+    transition: none !important;
+}
+
+/* 저사양 기기에서 이미지 로딩 최적화 */
+.low-performance-device img[data-src] {
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+}
+
+.low-performance-device img[data-src].loaded {
+    opacity: 1;
+}

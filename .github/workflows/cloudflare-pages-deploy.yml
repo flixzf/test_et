@@ -1,0 +1,49 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
+      - name: Install dependencies
+        run: |
+          npm install -g html-minifier-terser
+          npm install -g clean-css-cli
+          npm install -g terser
+          
+      - name: Optimize HTML
+        run: |
+          find . -name "*.html" -type f -exec html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o {} {} \;
+          
+      - name: Optimize CSS
+        run: |
+          find ./assets/css -name "*.css" -type f -exec sh -c 'cleancss -o "$0" "$0"' {} \;
+          
+      - name: Optimize JavaScript
+        run: |
+          find ./assets/js -name "*.js" -not -path "*/tests/*" -type f -exec sh -c 'terser "$0" -c -m -o "$0"' {} \;
+          
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: teto-egen-test
+          directory: .
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

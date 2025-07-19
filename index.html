@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테토-에겐 성격 유형 테스트</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Performance Optimized CSS (loaded after main CSS) -->
+    <link rel="stylesheet" href="assets/css/performance-optimized.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="테토-에겐 성격 유형 테스트">
+    <meta property="og:description" content="당신의 테토-에겐 성격 유형을 알아보세요!">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://your-domain.com">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container-fluid p-0">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8 text-center">
+                        <h1 class="main-title mt-5 mb-4 animate__animated animate__fadeInDown">테토-에겐 성격 유형 테스트</h1>
+                        
+                        <div class="main-image mb-4 animate__animated animate__zoomIn animate__delay-1s">
+                            <img src="assets/images/main-image.jpg" alt="테토-에겐 성격 유형" class="img-fluid rounded shadow">
+                        </div>
+                        
+                        <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                            설문조사와 얼굴 사진을 통해 당신이 <span class="badge bg-primary">테토남</span>, 
+                            <span class="badge bg-danger">테토녀</span>, <span class="badge bg-success">에겐남</span>, 
+                            <span class="badge bg-warning text-dark">에겐녀</span> 중 어떤 유형인지 알아보세요!
+                        </p>
+                        
+                        <div class="card mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-info-circle me-2"></i>테토-에겐 성격 유형이란?</h5>
+                                <p class="card-text">
+                                    테토-에겐 성격 유형은 사회적·행동적 특성에 따라 남성성과 여성성을 구분한 성격 유형 분류법입니다. 
+                                    테토는 공격적이고 논리적인 성향을, 에겐은 섬세하고 감성적인 성향을 나타냅니다.
+                                </p>
+                                <button id="more-info-btn" class="btn btn-outline-primary btn-sm mt-2">
+                                    <i class="fas fa-plus-circle me-1"></i> 더 알아보기
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="food-chain-container p-3 mb-4 animate__animated animate__fadeIn animate__delay-2s">
+                            <h5><i class="fas fa-heart me-2"></i>연애 먹이사슬</h5>
+                            <div class="food-chain-diagram">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-auto">에겐녀</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="col-auto">에겐남</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="col-auto">테토녀</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="col-auto">테토남</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
+                                    <div class="col-auto">에겐녀</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="personality-types row mb-4 animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="personality-type-card teto-male">
+                                    <div class="icon-container"><i class="fas fa-mars"></i></div>
+                                    <h5>테토남</h5>
+                                    <p class="small">논리적, 도전적</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="personality-type-card teto-female">
+                                    <div class="icon-container"><i class="fas fa-venus"></i></div>
+                                    <h5>테토녀</h5>
+                                    <p class="small">활발함, 직설적</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="personality-type-card egen-male">
+                                    <div class="icon-container"><i class="fas fa-mars"></i></div>
+                                    <h5>에겐남</h5>
+                                    <p class="small">섬세함, 공감능력</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3 mb-3">
+                                <div class="personality-type-card egen-female">
+                                    <div class="icon-container"><i class="fas fa-venus"></i></div>
+                                    <h5>에겐녀</h5>
+                                    <p class="small">차분함, 감수성</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="start-test-btn" class="btn btn-primary btn-lg mb-5 animate__animated animate__pulse animate__infinite">
+                            <i class="fas fa-play-circle me-2"></i>테스트 시작하기
+                        </button>
+                        
+                        <div class="test-info mb-5 animate__animated animate__fadeIn animate__delay-2s">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="test-info-item">
+                                        <i class="fas fa-clock fa-2x mb-2"></i>
+                                        <p>소요시간<br>약 3분</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="test-info-item">
+                                        <i class="fas fa-question-circle fa-2x mb-2"></i>
+                                        <p>문항수<br>10개</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="test-info-item">
+                                        <i class="fas fa-camera fa-2x mb-2"></i>
+                                        <p>사진 업로드<br>선택사항</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Survey Screen (Hidden initially) -->
+        <div id="survey-screen" class="screen">
+            <!-- Will be populated by JavaScript -->
+        </div>
+
+        <!-- Photo Upload Screen (Hidden initially) -->
+        <div id="photo-screen" class="screen">
+            <!-- Will be populated by JavaScript -->
+        </div>
+
+        <!-- Result Screen (Hidden initially) -->
+        <div id="result-screen" class="screen">
+            <!-- Will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="d-none">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">분석 중...</p>
+    </div>
+    
+    <!-- Info Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">테토-에겐 성격 유형 소개</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="info-section mb-4">
+                        <h4>테토-에겐 성격 유형이란?</h4>
+                        <p>
+                            테토-에겐 성격 유형은 사회적·행동적 특성에 따라 남성성과 여성성을 구분한 성격 유형 분류법입니다. 
+                            생물학적 성별과는 무관하게, 개인의 행동 패턴과 성향에 따라 테토(공격적, 논리적)와 에겐(섬세함, 감성적) 
+                            특성으로 나누고, 이를 다시 남성성과 여성성에 따라 테토남, 테토녀, 에겐남, 에겐녀로 구분합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="info-section mb-4">
+                        <h4>연애 먹이사슬</h4>
+                        <p>
+                            테토-에겐 성격 유형에서는 '연애 먹이사슬'이라는 재미있는 개념이 있습니다. 
+                            이는 각 유형이 특히 호감을 느끼는 다른 유형을 순환 구조로 표현한 것입니다.
+                        </p>
+                        <div class="food-chain-full text-center my-4">
+                            <img src="assets/images/food-chain.jpg" alt="연애 먹이사슬" class="img-fluid rounded">
+                        </div>
+                        <p>
+                            에겐녀는 에겐남에게, 에겐남은 테토녀에게, 테토녀는 테토남에게, 테토남은 에겐녀에게 
+                            자연스럽게 끌리는 경향이 있다고 합니다. 물론 이는 절대적인 법칙이 아니라 재미로 보는 
+                            하나의 패턴입니다.
+                        </p>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>각 유형별 특징</h4>
+                        
+                        <div class="personality-detail mb-4">
+                            <h5 class="text-primary"><i class="fas fa-mars me-2"></i>테토남</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>공격성과 사냥 본능이 강함</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>자기주장이 강하며 리더십이 있음</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>감정보다 논리를 우선시함</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>친구가 많거나 무리 생활에 익숙함</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>외부 세계에 관심이 많음</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>분석하고 판단하는 것을 좋아하며, 현실 지향적임</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>추상적 이념보다는 실질적 성과를 선호함</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>단순하고, 한 번 결정한 것은 밀어붙이는 스타일</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>도전과 모험을 좋아함</li>
+                                <li><i class="fas fa-check-circle me-2 text-primary"></i>패션, 향수 등에 큰 관심이 없는 경우가 많음</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="personality-detail mb-4">
+                            <h5 class="text-danger"><i class="fas fa-venus me-2"></i>테토녀</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>활발하고 에너지가 넘치는 성격</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>사교성이 좋고 친구 관계가 넓음</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>직설적이고 솔직한 표현을 선호함</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>목표 지향적이고 성취 욕구가 강함</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>경쟁을 즐기고 도전적인 상황을 선호함</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>감정 표현이 풍부하고 열정적임</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>실용적이고 현실적인 접근 방식을 선호함</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>독립적이고 자기주도적인 성향이 강함</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>결단력이 있고 빠른 의사결정을 함</li>
+                                <li><i class="fas fa-check-circle me-2 text-danger"></i>외향적이고 사회적 활동을 즐김</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="personality-detail mb-4">
+                            <h5 class="text-success"><i class="fas fa-mars me-2"></i>에겐남</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>섬세하고 감성적인 성향이 있음</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>트렌드에 민감하고 패션, 미용에 관심이 많음</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>타인의 감정을 잘 이해하고 공감 능력이 뛰어남</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>조화와 균형을 중시하는 평화주의적 성향</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>예술적 감각과 창의성이 풍부함</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>세심한 배려와 친절함을 보임</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>갈등보다는 타협과 조정을 선호함</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>감정 표현이 풍부하고 소통 능력이 좋음</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>심미적 가치를 중요시함</li>
+                                <li><i class="fas fa-check-circle me-2 text-success"></i>인간관계에서 깊이 있는 교류를 추구함</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="personality-detail">
+                            <h5 class="text-warning"><i class="fas fa-venus me-2"></i>에겐녀</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>차분하고 내면적인 성향이 강함</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>섬세하고 감수성이 풍부함</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>타인의 감정에 민감하게 반응함</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>조용하고 신중한 태도를 보임</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>안정적이고 편안한 환경을 선호함</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>깊이 있는 관계와 소통을 중시함</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>예술적 감각과 심미안이 뛰어남</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>자기 성찰과 내적 성장에 관심이 많음</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>배려심이 깊고 이타적인 성향이 있음</li>
+                                <li><i class="fas fa-check-circle me-2 text-warning"></i>직관적이고 통찰력이 있음</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- TensorFlow.js (지연 로딩을 위해 defer 속성 추가) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.18.0/dist/tf.min.js" defer></script>
+    <!-- Teachable Machine (지연 로딩을 위해 defer 속성 추가) -->
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5/dist/teachablemachine-image.min.js" defer></script>
+    <!-- html2canvas (결과 이미지 생성을 위해) -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+    <!-- 카카오톡 SDK -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js" defer></script>
+    <!-- Error Handler (가장 먼저 로드) -->
+    <script src="assets/js/error-handler.js"></script>
+    <!-- Performance Optimizer -->
+    <script src="assets/js/performance-optimizer.js"></script>
+    <!-- Resource Optimizer -->
+    <script src="assets/js/resource-optimizer.js"></script>
+    <!-- Code Splitter for lazy loading -->
+    <script src="assets/js/code-splitter.js"></script>
+    <!-- Main App (필수 코어 기능만 포함) -->
+    <script src="assets/js/app.js"></script>
+    
+    <!-- 나머지 JS 파일은 필요할 때 동적으로 로드됨 -->
+    <!-- 
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/score-calculator.js"></script>
+    <script src="assets/js/camera-access.js"></script>
+    <script src="assets/js/ai-model.js"></script>
+    <script src="assets/js/share-functions.js"></script>
+    <script src="assets/js/new-show-result.js"></script>
+    -->
+</body>
+</html>
