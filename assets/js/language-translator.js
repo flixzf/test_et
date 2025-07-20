@@ -11,9 +11,13 @@ const languageTranslator = (function() {
     
     // DOM update optimization
     let translationCache = new Map(); // Cache for translated strings
-    let previousTranslations = {}; // Previous translations for diffing
-    let domUpdateQueue = []; // Queue for batched DOM updates
-    let isUpdateScheduled = false; // Flag to track if an update is scheduled
+    let lastAppliedTranslations = new Map(); // Cache of last applied translations to elements
+    
+    // Cache configuration
+    const cacheConfig = {
+        maxSize: 1000, // Maximum number of translations to cache
+        elementCacheMaxSize: 500 // Maximum number of elements to cache translations for
+    }
     
     /**
      * Load translations for a specific language
@@ -102,7 +106,27 @@ const languageTranslator = (function() {
     // Cache for DOM elements that need translation
     let translationElementsCache = null;
     let titleKeyCache = null;
-    let lastAppliedTranslations = new Map(); // Cache of last applied translations to elements
+    
+    /**
+     * Manage the size of the last applied translations cache
+     * Removes least recently used entries when the cache exceeds the maximum size
+     */
+    function manageElementCacheSize() {
+        if (lastAppliedTranslations.size <= cacheConfig.elementCacheMaxSize) return;
+        
+        // Convert cache to array for sorting
+        const cacheEntries = Array.from(lastAppliedTranslations.entries());
+        
+        // Remove oldest entries to get back to max size
+        const entriesToRemove = cacheEntries.slice(0, cacheEntries.length - cacheConfig.elementCacheMaxSize);
+        
+        // Remove entries from cache
+        entriesToRemove.forEach(([key]) => {
+            lastAppliedTranslations.delete(key);
+        });
+        
+        console.log(`Element cache pruned: removed ${entriesToRemove.length} entries`);
+    }
     
     /**
      * Apply translations to the entire UI with optimized DOM updates
@@ -120,6 +144,9 @@ const languageTranslator = (function() {
         // Elements that need updating
         const elementsToUpdate = [];
         
+        // Group elements by their parent to minimize layout thrashing
+        const parentGroups = new Map();
+        
         // Prepare all translations first to minimize DOM reflows
         translationElementsCache.forEach(element => {
             const key = element.getAttribute('data-i18n');
@@ -135,11 +162,23 @@ const languageTranslator = (function() {
                 lastAppliedTranslations.get(elementId) !== translatedText) {
                 
                 // Store element and translation for batch update
-                elementsToUpdate.push({
+                const updateInfo = {
                     element,
                     elementId,
                     translatedText
-                });
+                };
+                
+                elementsToUpdate.push(updateInfo);
+                
+                // Group by parent element for optimized updates
+                const parent = element.parentElement;
+                if (parent) {
+                    const parentId = parent.id || getElementPath(parent);
+                    if (!parentGroups.has(parentId)) {
+                        parentGroups.set(parentId, []);
+                    }
+                    parentGroups.get(parentId).push(updateInfo);
+                }
                 
                 // Update the cache with the new translation
                 lastAppliedTranslations.set(elementId, translatedText);
@@ -152,19 +191,26 @@ const languageTranslator = (function() {
             return;
         }
         
+        // Manage element cache size
+        manageElementCacheSize();
+        
         // Apply all translations in a single batch
         // Use requestAnimationFrame to apply changes during the next paint cycle
         requestAnimationFrame(() => {
-            elementsToUpdate.forEach(({ element, translatedText }) => {
-                // Apply translation based on element type
-                if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-                    element.placeholder = translatedText;
-                } else if (element.tagName === 'INPUT' && element.type === 'value') {
-                    element.value = translatedText;
-                } else {
-                    element.textContent = translatedText;
-                }
-            });
+            // Process updates by parent group to minimize layout thrashing
+            if (parentGroups.size > 0) {
+                parentGroups.forEach(updates => {
+                    // Process all updates for a single parent in one batch
+                    updates.forEach(({ element, translatedText }) => {
+                        applyTranslationToElement(element, translatedText);
+                    });
+                });
+            } else {
+                // Fallback to individual updates if grouping isn't possible
+                elementsToUpdate.forEach(({ element, translatedText }) => {
+                    applyTranslationToElement(element, translatedText);
+                });
+            }
             
             // Update document title if needed
             if (titleKeyCache) {
@@ -176,6 +222,41 @@ const languageTranslator = (function() {
             
             console.log(`Translations applied to UI (${elementsToUpdate.length} elements updated)`);
         });
+    }
+    
+    /**
+     * Apply translation to a specific element based on its type
+     * @param {Element} element - The DOM element to update
+     * @param {string} translatedText - The translated text to apply
+     */
+    function applyTranslationToElement(element, translatedText) {
+        // Apply translation based on element type and data-i18n-target attribute
+        const target = element.getAttribute('data-i18n-target');
+        
+        if (target) {
+            // Apply to specified attribute
+            element.setAttribute(target, translatedText);
+        } else if (element.tagName === 'INPUT') {
+            if (element.type === 'text' || element.type === 'email' || element.type === 'password') {
+                // For input elements, check if we should update value or placeholder
+                if (element.getAttribute('data-i18n-attr') === 'placeholder') {
+                    element.placeholder = translatedText;
+                } else {
+                    element.value = translatedText;
+                }
+            } else if (element.type === 'button' || element.type === 'submit') {
+                element.value = translatedText;
+            }
+        } else if (element.tagName === 'META') {
+            // For meta tags, update content attribute
+            element.content = translatedText;
+        } else if (element.tagName === 'IMG') {
+            // For images, update alt text
+            element.alt = translatedText;
+        } else {
+            // Default: update text content
+            element.textContent = translatedText;
+        }
     }
     
     /**
@@ -401,14 +482,18 @@ const languageTranslator = (function() {
     /**
      * Refresh translations for the current language
      * Useful after DOM changes or when new translatable elements are added
+     * @param {boolean} [preserveTranslationCache=true] - Whether to preserve the translation string cache
      * @returns {Promise} Promise that resolves when translations are refreshed
      */
-    function refreshTranslations() {
+    function refreshTranslations(preserveTranslationCache = true) {
         // Invalidate cache to force re-scanning of DOM elements
-        invalidateCache();
+        invalidateCache(!preserveTranslationCache, false);
         
         // Apply translations with the refreshed cache
         applyTranslations();
+        
+        // Manage cache size after refresh
+        manageTranslationCacheSize();
         
         return Promise.resolve();
     }

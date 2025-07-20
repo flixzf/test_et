@@ -52,6 +52,19 @@ const languageLoader = (function() {
             // Clear potentially corrupted cache
             localStorage.removeItem(cacheConfig.persistKey);
         }
+        
+        // Set up periodic cache persistence
+        if (typeof window !== 'undefined') {
+            // Save cache before page unload
+            window.addEventListener('beforeunload', () => {
+                persistCache();
+            });
+            
+            // Periodically persist cache (every 5 minutes)
+            setInterval(() => {
+                persistCache();
+            }, 5 * 60 * 1000);
+        }
     }
     
     /**
@@ -75,7 +88,40 @@ const languageLoader = (function() {
             localStorage.setItem(cacheConfig.persistKey, JSON.stringify(cacheData));
             console.log(`Cache persisted to local storage with ${cache.size} languages`);
         } catch (error) {
-            console.error('Error persisting cache to local storage:', error);
+            // Handle potential quota exceeded errors
+            if (error.name === 'QuotaExceededError' || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+                console.warn('Local storage quota exceeded. Trying to free up space...');
+                
+                // Try to free up space by removing older cache entries
+                try {
+                    // Remove all cached languages except the current and default
+                    const currentLang = window.languageUtils.getCurrentLanguage().code;
+                    const defaultLang = window.languageConfig.defaultLanguage;
+                    
+                    const keysToKeep = [currentLang, defaultLang];
+                    const cacheData = {};
+                    
+                    // Only keep essential languages
+                    keysToKeep.forEach(langCode => {
+                        if (cache.has(langCode)) {
+                            cacheData[langCode] = {
+                                data: cache.get(langCode),
+                                metadata: cacheMetadata.get(langCode) || { timestamp: Date.now() }
+                            };
+                        }
+                    });
+                    
+                    // Try saving the reduced cache
+                    localStorage.setItem(cacheConfig.persistKey, JSON.stringify(cacheData));
+                    console.log('Reduced cache persisted to local storage');
+                } catch (innerError) {
+                    console.error('Failed to persist reduced cache:', innerError);
+                    // As a last resort, clear the cache storage
+                    localStorage.removeItem(cacheConfig.persistKey);
+                }
+            } else {
+                console.error('Error persisting cache to local storage:', error);
+            }
         }
     }
     
@@ -374,6 +420,15 @@ const languageLoader = (function() {
     // Initialize cache from local storage
     initializeCache();
     
+    /**
+     * Set cache configuration (for testing purposes)
+     * @param {Object} config - The new cache configuration
+     * @private
+     */
+    function _setTestCacheConfig(config) {
+        Object.assign(cacheConfig, config);
+    }
+    
     // Public API
     return {
         loadLanguage,
@@ -385,7 +440,9 @@ const languageLoader = (function() {
         isCached,
         getCachedLanguages,
         // Expose cache configuration for testing and debugging
-        getCacheConfig: () => ({ ...cacheConfig })
+        getCacheConfig: () => ({ ...cacheConfig }),
+        // For testing only
+        _setTestCacheConfig
     };
 })();
 
