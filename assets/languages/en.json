@@ -1,0 +1,195 @@
+{
+  "app": {
+    "title": "Teto-Egen Personality Test",
+    "description": "Discover your Teto-Egen personality type!",
+    "metaDescription": "Discover your Teto-Egen personality type!"
+  },
+  "startScreen": {
+    "mainTitle": "Teto-Egen Personality Test",
+    "intro": "Find out if you're a Teto Man, Teto Woman, Egen Man, or Egen Woman through a survey and facial analysis!",
+    "startButton": "Start Test",
+    "infoTitle": "What is the Teto-Egen Personality Type?",
+    "infoDescription": "The Teto-Egen personality type is a classification system that distinguishes masculinity and femininity based on social and behavioral characteristics. Teto represents aggressive and logical tendencies, while Egen represents sensitive and emotional tendencies.",
+    "moreInfoButton": "Learn More",
+    "foodChainTitle": "Dating Food Chain",
+    "testInfo": {
+      "timeRequired": "Time Required",
+      "timeValue": "About 3 min",
+      "questionCount": "Questions",
+      "questionValue": "10",
+      "photoUpload": "Photo Upload",
+      "photoValue": "Optional"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "Teto Man",
+        "traits": "Logical, Challenging"
+      },
+      "tetoFemale": {
+        "title": "Teto Woman",
+        "traits": "Energetic, Direct"
+      },
+      "egenMale": {
+        "title": "Egen Man",
+        "traits": "Sensitive, Empathetic"
+      },
+      "egenFemale": {
+        "title": "Egen Woman",
+        "traits": "Calm, Emotional"
+      }
+    }
+  },
+  "infoModal": {
+    "title": "Introduction to Teto-Egen Personality Types",
+    "closeButton": "Close",
+    "sections": {
+      "introduction": {
+        "title": "What is the Teto-Egen Personality Type?",
+        "content": "The Teto-Egen personality type is a classification system that distinguishes masculinity and femininity based on social and behavioral characteristics. Regardless of biological sex, individuals are categorized into Teto (aggressive, logical) and Egen (sensitive, emotional) characteristics, which are further divided into Teto Man, Teto Woman, Egen Man, and Egen Woman based on masculinity and femininity."
+      },
+      "foodChain": {
+        "title": "Dating Food Chain",
+        "content1": "In the Teto-Egen personality type system, there's an interesting concept called the 'dating food chain.' This represents a circular structure of which types are naturally attracted to other types.",
+        "content2": "Egen Women tend to be attracted to Egen Men, Egen Men to Teto Women, Teto Women to Teto Men, and Teto Men to Egen Women. Of course, this is not an absolute rule but rather a pattern observed for fun."
+      },
+      "personalityTraits": {
+        "title": "Characteristics of Each Type",
+        "tetoMale": {
+          "title": "Teto Man",
+          "traits": [
+            "Strong aggression and hunting instinct",
+            "Strong self-assertion and leadership",
+            "Prioritizes logic over emotion",
+            "Has many friends or is accustomed to group life",
+            "Interested in the external world",
+            "Enjoys analyzing and judging, reality-oriented",
+            "Prefers practical results over abstract ideals",
+            "Simple and pushes through once a decision is made",
+            "Enjoys challenges and adventures",
+            "Often not very interested in fashion, perfume, etc."
+          ]
+        },
+        "tetoFemale": {
+          "title": "Teto Woman",
+          "traits": [
+            "Lively and energetic personality",
+            "Sociable with a wide circle of friends",
+            "Prefers direct and honest expression",
+            "Goal-oriented with strong achievement desires",
+            "Enjoys competition and prefers challenging situations",
+            "Rich emotional expression and passionate",
+            "Prefers practical and realistic approaches",
+            "Strong independent and self-directed tendencies",
+            "Decisive and makes quick decisions",
+            "Extroverted and enjoys social activities"
+          ]
+        },
+        "egenMale": {
+          "title": "Egen Man",
+          "traits": [
+            "Has sensitive and emotional tendencies",
+            "Sensitive to trends and interested in fashion and beauty",
+            "Understands others' emotions well with excellent empathy",
+            "Pacifistic tendencies that value harmony and balance",
+            "Rich artistic sense and creativity",
+            "Shows careful consideration and kindness",
+            "Prefers compromise and coordination over conflict",
+            "Rich emotional expression and good communication skills",
+            "Values aesthetic values",
+            "Seeks deep exchanges in human relationships"
+          ]
+        },
+        "egenFemale": {
+          "title": "Egen Woman",
+          "traits": [
+            "Strong calm and introspective tendencies",
+            "Delicate and rich in sensitivity",
+            "Responds sensitively to others' emotions",
+            "Shows quiet and careful attitude",
+            "Prefers stable and comfortable environments",
+            "Values deep relationships and communication",
+            "Excellent artistic sense and aesthetic eye",
+            "Interested in self-reflection and inner growth",
+            "Deep consideration and altruistic tendencies",
+            "Intuitive and insightful"
+          ]
+        }
+      }
+    }
+  },
+  "surveyScreen": {
+    "progress": "{current} / {total}",
+    "previousButton": "Previous",
+    "questionPrefix": "Q"
+  },
+  "photoScreen": {
+    "title": "Upload Face Photo",
+    "optional": "Optional",
+    "description": "Please upload a face photo for a more accurate Teto-Egen personality type analysis.",
+    "tips": {
+      "faceFront": "Front-facing",
+      "lighting": "Good lighting",
+      "clarity": "Clear image"
+    },
+    "uploadArea": {
+      "instruction": "Click here or drag and drop a photo",
+      "formats": "Supported formats: JPG, PNG, GIF (max 5MB)"
+    },
+    "processing": "Processing image...",
+    "uploadSuccess": "Image has been uploaded",
+    "analyzeButton": "Analyze",
+    "skipButton": "Skip",
+    "privacyNotice": "Uploaded photos are deleted immediately after analysis and are not stored.",
+    "errors": {
+      "imageOnly": "Only image files can be uploaded.",
+      "sizeLimit": "File size must be less than 5MB.",
+      "readError": "An error occurred while reading the file.",
+      "processingError": "An error occurred while processing the image."
+    }
+  },
+  "resultScreen": {
+    "yourType": "Your Teto-Egen personality type is",
+    "characteristics": "Characteristics of {type}",
+    "facialAnalysis": "Facial Feature Analysis",
+    "scoreGraph": "Tendency Scores",
+    "scores": {
+      "tetoScore": "Teto Tendency",
+      "egenScore": "Egen Tendency",
+      "masculinityScore": "Masculinity",
+      "femininityScore": "Femininity"
+    },
+    "foodChain": {
+      "title": "Dating Food Chain",
+      "description": "Egen Woman → Egen Man → Teto Woman → Teto Man → Egen Woman"
+    },
+    "share": {
+      "title": "Share Results",
+      "linkCopied": "Link has been copied to clipboard.",
+      "downloadNotReady": "Result image download feature is coming soon."
+    },
+    "restartButton": "Take Test Again"
+  },
+  "loadingScreen": {
+    "analyzing": "Analyzing..."
+  },
+  "alerts": {
+    "questionsLoadError": "An error occurred while loading question data. Please refresh the page.",
+    "leaveConfirmation": "The test is in progress. Are you sure you want to leave?",
+    "leaveWarning": "The test is in progress. If you leave the page, your progress will not be saved."
+  },
+  "languageSelector": {
+    "label": "Language",
+    "selectLanguage": "Select language"
+  },
+  "testPage": {
+    "title": "Teto-Egen Personality Test - Test Mode",
+    "subtitle": "Test Mode",
+    "backToMain": "Back to Main"
+  },
+  "personalityTypes": {
+    "tetoMale": "Teto Man",
+    "tetoFemale": "Teto Woman",
+    "egenMale": "Egen Man",
+    "egenFemale": "Egen Woman"
+  }
+}

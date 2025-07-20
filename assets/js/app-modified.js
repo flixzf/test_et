@@ -23,6 +23,9 @@ $(document).ready(function() {
     if (isOptimized) {
         setupLazyLoading();
     }
+    
+    // 언어 시스템 초기화
+    initializeLanguageSystem();
 });
 
 /**
@@ -610,4 +613,95 @@ function navigateToPreviousQuestion() {
  */
 function confirmPageExit() {
     return '테스트가 진행 중입니다. 페이지를 떠나면 진행 상황이 저장되지 않습니다.';
+}
+
+/**
+ * 언어 시스템 초기화
+ * 언어 설정을 로드하고 언어 드롭다운을 초기화합니다.
+ */
+function initializeLanguageSystem() {
+    try {
+        // 언어 모듈이 로드되었는지 확인
+        if (!window.languageUtils || !window.languageStorage || !window.languageLoader || 
+            !window.languageTranslator || !window.languageDropdown) {
+            console.warn('언어 모듈이 로드되지 않았습니다.');
+            return;
+        }
+        
+        // 성능 최적화 모듈 사용 확인
+        const isOptimized = typeof window.performanceOptimizer !== 'undefined';
+        
+        // 언어 시스템 초기화
+        window.languageTranslator.init()
+            .then(language => {
+                console.log(`언어 시스템 초기화 완료: ${language.code} (${language.name})`);
+                
+                // 언어 드롭다운 초기화
+                window.languageDropdown.init('language-dropdown-container');
+                
+                // RTL 언어 지원
+                if (window.languageUtils.isRTL()) {
+                    document.documentElement.dir = 'rtl';
+                    document.body.classList.add('rtl');
+                } else {
+                    document.documentElement.dir = 'ltr';
+                    document.body.classList.remove('rtl');
+                }
+                
+                // 성능 최적화가 활성화된 경우에만 추가 최적화 적용
+                if (isOptimized) {
+                    // 페이지 로드 후 사용자가 상호작용할 때까지 기다린 후 추가 언어 파일 미리 로드
+                    const userInteractionEvents = ['mousemove', 'click', 'keydown', 'touchstart', 'scroll'];
+                    
+                    const handleUserInteraction = () => {
+                        // 사용자 상호작용 이벤트 리스너 제거
+                        userInteractionEvents.forEach(event => {
+                            window.removeEventListener(event, handleUserInteraction);
+                        });
+                        
+                        // 사용자가 상호작용한 후 미리 로드 시작
+                        setTimeout(() => {
+                            window.languageLoader.preloadLikelyLanguages();
+                        }, 3000); // 사용자 상호작용 후 3초 후에 미리 로드 시작
+                    };
+                    
+                    // 사용자 상호작용 이벤트 리스너 등록
+                    userInteractionEvents.forEach(event => {
+                        window.addEventListener(event, handleUserInteraction, { once: true });
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('언어 시스템 초기화 실패:', error);
+            });
+    } catch (error) {
+        console.error('언어 시스템 초기화 중 오류 발생:', error);
+    }
+}
+
+/**
+ * 지연 로딩 설정
+ * 필요한 리소스를 필요할 때만 로드하도록 설정합니다.
+ */
+function setupLazyLoading() {
+    // 성능 최적화 모듈이 로드되었는지 확인
+    if (typeof window.performanceOptimizer === 'undefined') {
+        return;
+    }
+    
+    // 이미지 지연 로딩 설정
+    window.performanceOptimizer.setupLazyLoading();
+    
+    // 스크롤 이벤트에 따른 컨텐츠 지연 로딩
+    window.addEventListener('scroll', function() {
+        window.performanceOptimizer.checkLazyLoadElements();
+    });
+    
+    // 리사이즈 이벤트에 따른 컨텐츠 지연 로딩
+    window.addEventListener('resize', function() {
+        window.performanceOptimizer.checkLazyLoadElements();
+    });
+    
+    // 초기 체크
+    window.performanceOptimizer.checkLazyLoadElements();
 }

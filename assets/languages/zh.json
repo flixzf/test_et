@@ -1,0 +1,195 @@
+{
+  "app": {
+    "title": "特托-埃根性格测试",
+    "description": "发现你的特托-埃根性格类型！",
+    "metaDescription": "发现你的特托-埃根性格类型！"
+  },
+  "startScreen": {
+    "mainTitle": "特托-埃根性格测试",
+    "intro": "通过问卷调查和面部分析，了解你是特托男、特托女、埃根男还是埃根女！",
+    "startButton": "开始测试",
+    "infoTitle": "什么是特托-埃根性格类型？",
+    "infoDescription": "特托-埃根性格类型是一种基于社会和行为特征区分男性气质和女性气质的分类系统。特托代表积极和逻辑性的倾向，而埃根代表敏感和情感性的倾向。",
+    "moreInfoButton": "了解更多",
+    "foodChainTitle": "恋爱食物链",
+    "testInfo": {
+      "timeRequired": "所需时间",
+      "timeValue": "约3分钟",
+      "questionCount": "问题数量",
+      "questionValue": "10",
+      "photoUpload": "照片上传",
+      "photoValue": "可选"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "特托男",
+        "traits": "逻辑性，挑战性"
+      },
+      "tetoFemale": {
+        "title": "特托女",
+        "traits": "活力，直接"
+      },
+      "egenMale": {
+        "title": "埃根男",
+        "traits": "敏感，善解人意"
+      },
+      "egenFemale": {
+        "title": "埃根女",
+        "traits": "冷静，情感丰富"
+      }
+    }
+  },
+  "infoModal": {
+    "title": "特托-埃根性格类型介绍",
+    "closeButton": "关闭",
+    "sections": {
+      "introduction": {
+        "title": "什么是特托-埃根性格类型？",
+        "content": "特托-埃根性格类型是一种基于社会和行为特征区分男性气质和女性气质的分类系统。无论生物性别如何，个体都被分为特托（积极，逻辑）和埃根（敏感，情感）特征，并根据男性气质和女性气质进一步划分为特托男、特托女、埃根男和埃根女。"
+      },
+      "foodChain": {
+        "title": "恋爱食物链",
+        "content1": "在特托-埃根性格类型系统中，有一个有趣的概念叫做"恋爱食物链"。这代表了不同类型之间自然吸引的循环结构。",
+        "content2": "埃根女往往被埃根男吸引，埃根男被特托女吸引，特托女被特托男吸引，特托男被埃根女吸引。当然，这不是绝对的规则，而是一种观察到的有趣模式。"
+      },
+      "personalityTraits": {
+        "title": "各类型特征",
+        "tetoMale": {
+          "title": "特托男",
+          "traits": [
+            "强烈的攻击性和狩猎本能",
+            "强烈的自我主张和领导力",
+            "优先考虑逻辑而非情感",
+            "有很多朋友或习惯于群体生活",
+            "对外部世界感兴趣",
+            "喜欢分析和判断，现实导向",
+            "偏好实际结果而非抽象理想",
+            "简单直接，一旦做出决定就坚持到底",
+            "喜欢挑战和冒险",
+            "通常对时尚、香水等不太感兴趣"
+          ]
+        },
+        "tetoFemale": {
+          "title": "特托女",
+          "traits": [
+            "活泼且充满活力的性格",
+            "善于社交，朋友圈广泛",
+            "偏好直接和诚实的表达",
+            "目标导向，有强烈的成就欲",
+            "享受竞争，偏好具有挑战性的情况",
+            "情感表达丰富且充满激情",
+            "偏好实用和现实的方法",
+            "强烈的独立和自主倾向",
+            "果断，能快速做出决定",
+            "外向且喜欢社交活动"
+          ]
+        },
+        "egenMale": {
+          "title": "埃根男",
+          "traits": [
+            "具有敏感和情感倾向",
+            "对潮流敏感，对时尚和美容感兴趣",
+            "善于理解他人情感，具有出色的同理心",
+            "重视和谐与平衡的和平主义倾向",
+            "丰富的艺术感和创造力",
+            "表现出细心的关怀和善良",
+            "偏好妥协和协调而非冲突",
+            "情感表达丰富，沟通能力良好",
+            "重视美学价值",
+            "在人际关系中寻求深度交流"
+          ]
+        },
+        "egenFemale": {
+          "title": "埃根女",
+          "traits": [
+            "强烈的冷静和内省倾向",
+            "细腻且敏感度高",
+            "对他人情感反应敏感",
+            "表现出安静和谨慎的态度",
+            "偏好稳定和舒适的环境",
+            "重视深度关系和沟通",
+            "出色的艺术感和审美眼光",
+            "对自我反思和内在成长感兴趣",
+            "深思熟虑和利他主义倾向",
+            "直觉敏锐，洞察力强"
+          ]
+        }
+      }
+    }
+  },
+  "surveyScreen": {
+    "progress": "{current} / {total}",
+    "previousButton": "上一题",
+    "questionPrefix": "问题"
+  },
+  "photoScreen": {
+    "title": "上传面部照片",
+    "optional": "可选",
+    "description": "请上传面部照片以获得更准确的特托-埃根性格类型分析。",
+    "tips": {
+      "faceFront": "正面朝向",
+      "lighting": "良好光线",
+      "clarity": "清晰图像"
+    },
+    "uploadArea": {
+      "instruction": "点击此处或拖放照片",
+      "formats": "支持格式：JPG、PNG、GIF（最大5MB）"
+    },
+    "processing": "处理图像中...",
+    "uploadSuccess": "图像已上传",
+    "analyzeButton": "分析",
+    "skipButton": "跳过",
+    "privacyNotice": "上传的照片在分析后立即删除，不会被存储。",
+    "errors": {
+      "imageOnly": "只能上传图像文件。",
+      "sizeLimit": "文件大小必须小于5MB。",
+      "readError": "读取文件时发生错误。",
+      "processingError": "处理图像时发生错误。"
+    }
+  },
+  "resultScreen": {
+    "yourType": "你的特托-埃根性格类型是",
+    "characteristics": "{type}的特征",
+    "facialAnalysis": "面部特征分析",
+    "scoreGraph": "倾向得分",
+    "scores": {
+      "tetoScore": "特托倾向",
+      "egenScore": "埃根倾向",
+      "masculinityScore": "男性气质",
+      "femininityScore": "女性气质"
+    },
+    "foodChain": {
+      "title": "恋爱食物链",
+      "description": "埃根女 → 埃根男 → 特托女 → 特托男 → 埃根女"
+    },
+    "share": {
+      "title": "分享结果",
+      "linkCopied": "链接已复制到剪贴板。",
+      "downloadNotReady": "结果图像下载功能即将推出。"
+    },
+    "restartButton": "再次测试"
+  },
+  "loadingScreen": {
+    "analyzing": "分析中..."
+  },
+  "alerts": {
+    "questionsLoadError": "加载问题数据时发生错误。请刷新页面。",
+    "leaveConfirmation": "测试正在进行中。确定要离开吗？",
+    "leaveWarning": "测试正在进行中。如果离开页面，您的进度将不会被保存。"
+  },
+  "languageSelector": {
+    "label": "语言",
+    "selectLanguage": "选择语言"
+  },
+  "testPage": {
+    "title": "特托-埃根性格测试 - 测试模式",
+    "subtitle": "测试模式",
+    "backToMain": "返回主页"
+  },
+  "personalityTypes": {
+    "tetoMale": "特托男",
+    "tetoFemale": "特托女",
+    "egenMale": "埃根男",
+    "egenFemale": "埃根女"
+  }
+}

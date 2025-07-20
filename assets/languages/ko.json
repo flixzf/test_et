@@ -1,0 +1,195 @@
+{
+  "app": {
+    "title": "테토-에겐 성격 유형 테스트",
+    "description": "당신의 테토-에겐 성격 유형을 알아보세요!",
+    "metaDescription": "당신의 테토-에겐 성격 유형을 알아보세요!"
+  },
+  "startScreen": {
+    "mainTitle": "테토-에겐 성격 유형 테스트",
+    "intro": "설문조사와 얼굴 사진을 통해 당신이 테토남, 테토녀, 에겐남, 에겐녀 중 어떤 유형인지 알아보세요!",
+    "startButton": "테스트 시작하기",
+    "infoTitle": "테토-에겐 성격 유형이란?",
+    "infoDescription": "테토-에겐 성격 유형은 사회적·행동적 특성에 따라 남성성과 여성성을 구분한 성격 유형 분류법입니다. 테토는 공격적이고 논리적인 성향을, 에겐은 섬세하고 감성적인 성향을 나타냅니다.",
+    "moreInfoButton": "더 알아보기",
+    "foodChainTitle": "연애 먹이사슬",
+    "testInfo": {
+      "timeRequired": "소요시간",
+      "timeValue": "약 3분",
+      "questionCount": "문항수",
+      "questionValue": "10개",
+      "photoUpload": "사진 업로드",
+      "photoValue": "선택사항"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "테토남",
+        "traits": "논리적, 도전적"
+      },
+      "tetoFemale": {
+        "title": "테토녀",
+        "traits": "활발함, 직설적"
+      },
+      "egenMale": {
+        "title": "에겐남",
+        "traits": "섬세함, 공감능력"
+      },
+      "egenFemale": {
+        "title": "에겐녀",
+        "traits": "차분함, 감수성"
+      }
+    }
+  },
+  "infoModal": {
+    "title": "테토-에겐 성격 유형 소개",
+    "closeButton": "닫기",
+    "sections": {
+      "introduction": {
+        "title": "테토-에겐 성격 유형이란?",
+        "content": "테토-에겐 성격 유형은 사회적·행동적 특성에 따라 남성성과 여성성을 구분한 성격 유형 분류법입니다. 생물학적 성별과는 무관하게, 개인의 행동 패턴과 성향에 따라 테토(공격적, 논리적)와 에겐(섬세함, 감성적) 특성으로 나누고, 이를 다시 남성성과 여성성에 따라 테토남, 테토녀, 에겐남, 에겐녀로 구분합니다."
+      },
+      "foodChain": {
+        "title": "연애 먹이사슬",
+        "content1": "테토-에겐 성격 유형에서는 '연애 먹이사슬'이라는 재미있는 개념이 있습니다. 이는 각 유형이 특히 호감을 느끼는 다른 유형을 순환 구조로 표현한 것입니다.",
+        "content2": "에겐녀는 에겐남에게, 에겐남은 테토녀에게, 테토녀는 테토남에게, 테토남은 에겐녀에게 자연스럽게 끌리는 경향이 있다고 합니다. 물론 이는 절대적인 법칙이 아니라 재미로 보는 하나의 패턴입니다."
+      },
+      "personalityTraits": {
+        "title": "각 유형별 특징",
+        "tetoMale": {
+          "title": "테토남",
+          "traits": [
+            "공격성과 사냥 본능이 강함",
+            "자기주장이 강하며 리더십이 있음",
+            "감정보다 논리를 우선시함",
+            "친구가 많거나 무리 생활에 익숙함",
+            "외부 세계에 관심이 많음",
+            "분석하고 판단하는 것을 좋아하며, 현실 지향적임",
+            "추상적 이념보다는 실질적 성과를 선호함",
+            "단순하고, 한 번 결정한 것은 밀어붙이는 스타일",
+            "도전과 모험을 좋아함",
+            "패션, 향수 등에 큰 관심이 없는 경우가 많음"
+          ]
+        },
+        "tetoFemale": {
+          "title": "테토녀",
+          "traits": [
+            "활발하고 에너지가 넘치는 성격",
+            "사교성이 좋고 친구 관계가 넓음",
+            "직설적이고 솔직한 표현을 선호함",
+            "목표 지향적이고 성취 욕구가 강함",
+            "경쟁을 즐기고 도전적인 상황을 선호함",
+            "감정 표현이 풍부하고 열정적임",
+            "실용적이고 현실적인 접근 방식을 선호함",
+            "독립적이고 자기주도적인 성향이 강함",
+            "결단력이 있고 빠른 의사결정을 함",
+            "외향적이고 사회적 활동을 즐김"
+          ]
+        },
+        "egenMale": {
+          "title": "에겐남",
+          "traits": [
+            "섬세하고 감성적인 성향이 있음",
+            "트렌드에 민감하고 패션, 미용에 관심이 많음",
+            "타인의 감정을 잘 이해하고 공감 능력이 뛰어남",
+            "조화와 균형을 중시하는 평화주의적 성향",
+            "예술적 감각과 창의성이 풍부함",
+            "세심한 배려와 친절함을 보임",
+            "갈등보다는 타협과 조정을 선호함",
+            "감정 표현이 풍부하고 소통 능력이 좋음",
+            "심미적 가치를 중요시함",
+            "인간관계에서 깊이 있는 교류를 추구함"
+          ]
+        },
+        "egenFemale": {
+          "title": "에겐녀",
+          "traits": [
+            "차분하고 내면적인 성향이 강함",
+            "섬세하고 감수성이 풍부함",
+            "타인의 감정에 민감하게 반응함",
+            "조용하고 신중한 태도를 보임",
+            "안정적이고 편안한 환경을 선호함",
+            "깊이 있는 관계와 소통을 중시함",
+            "예술적 감각과 심미안이 뛰어남",
+            "자기 성찰과 내적 성장에 관심이 많음",
+            "배려심이 깊고 이타적인 성향이 있음",
+            "직관적이고 통찰력이 있음"
+          ]
+        }
+      }
+    }
+  },
+  "surveyScreen": {
+    "progress": "{current} / {total}",
+    "previousButton": "이전",
+    "questionPrefix": "Q"
+  },
+  "photoScreen": {
+    "title": "얼굴 사진 업로드",
+    "optional": "선택사항",
+    "description": "더 정확한 테토-에겐 성격 유형 분석을 위해 얼굴 사진을 업로드해 주세요.",
+    "tips": {
+      "faceFront": "정면 얼굴",
+      "lighting": "밝은 조명",
+      "clarity": "선명한 이미지"
+    },
+    "uploadArea": {
+      "instruction": "이곳을 클릭하거나 사진을 끌어다 놓으세요",
+      "formats": "지원 형식: JPG, PNG, GIF (최대 5MB)"
+    },
+    "processing": "이미지 처리 중...",
+    "uploadSuccess": "이미지가 업로드되었습니다",
+    "analyzeButton": "분석하기",
+    "skipButton": "건너뛰기",
+    "privacyNotice": "업로드된 사진은 분석 후 즉시 삭제되며 저장되지 않습니다.",
+    "errors": {
+      "imageOnly": "이미지 파일만 업로드 가능합니다.",
+      "sizeLimit": "파일 크기는 5MB 이하여야 합니다.",
+      "readError": "파일을 읽는 중 오류가 발생했습니다.",
+      "processingError": "이미지 처리 중 오류가 발생했습니다."
+    }
+  },
+  "resultScreen": {
+    "yourType": "당신의 테토-에겐 성격 유형은",
+    "characteristics": "{type}의 특징",
+    "facialAnalysis": "얼굴 특징 분석",
+    "scoreGraph": "성향 점수",
+    "scores": {
+      "tetoScore": "테토 성향",
+      "egenScore": "에겐 성향",
+      "masculinityScore": "남성성",
+      "femininityScore": "여성성"
+    },
+    "foodChain": {
+      "title": "연애 먹이사슬",
+      "description": "에겐녀 → 에겐남 → 테토녀 → 테토남 → 에겐녀"
+    },
+    "share": {
+      "title": "결과 공유하기",
+      "linkCopied": "링크가 클립보드에 복사되었습니다.",
+      "downloadNotReady": "결과 이미지 다운로드 기능은 준비 중입니다."
+    },
+    "restartButton": "다시 테스트하기"
+  },
+  "loadingScreen": {
+    "analyzing": "분석 중..."
+  },
+  "alerts": {
+    "questionsLoadError": "질문 데이터를 불러오는 중 오류가 발생했습니다. 페이지를 새로고침해 주세요.",
+    "leaveConfirmation": "테스트가 진행 중입니다. 정말로 나가시겠습니까?",
+    "leaveWarning": "테스트가 진행 중입니다. 페이지를 떠나면 진행 상황이 저장되지 않습니다."
+  },
+  "languageSelector": {
+    "label": "언어 선택",
+    "selectLanguage": "언어를 선택하세요"
+  },
+  "testPage": {
+    "title": "테토-에겐 성격 유형 테스트 - 테스트 모드",
+    "subtitle": "테스트 모드",
+    "backToMain": "메인으로 돌아가기"
+  },
+  "personalityTypes": {
+    "tetoMale": "테토남",
+    "tetoFemale": "테토녀",
+    "egenMale": "에겐남",
+    "egenFemale": "에겐녀"
+  }
+}
