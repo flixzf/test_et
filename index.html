@@ -45,6 +45,9 @@
                                 <br>
                                 <span class="highlight-text">다른 사람들은 나를 어떻게 판단할까?</span>
                             </h2>
+                            <div class="typing-container">
+                                <span class="typing-text"></span>
+                            </div>
                         </div>
                         
                         <div class="main-image mb-4 animate__animated animate__zoomIn animate__delay-1s">
@@ -74,46 +77,62 @@
                             <h5><i class="fas fa-heart me-2"></i>연애 먹이사슬</h5>
                             <div class="food-chain-diagram">
                                 <div class="row align-items-center justify-content-center">
-                                    <div class="col-auto">에겐녀</div>
-                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
-                                    <div class="col-auto">에겐남</div>
-                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
-                                    <div class="col-auto">테토녀</div>
-                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
-                                    <div class="col-auto">테토남</div>
-                                    <div class="col-auto"><i class="fas fa-arrow-right"></i></div>
-                                    <div class="col-auto">에겐녀</div>
+                                    <div class="col-auto personality-node egen-female">에겐녀</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
+                                    <div class="col-auto personality-node egen-male">에겐남</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
+                                    <div class="col-auto personality-node teto-female">테토녀</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
+                                    <div class="col-auto personality-node teto-male">테토남</div>
+                                    <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
+                                    <div class="col-auto personality-node egen-female">에겐녀</div>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="personality-types row mb-4 animate__animated animate__fadeIn animate__delay-2s">
                             <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card teto-male">
+                                <div class="personality-type-card teto-male" data-personality="teto-male">
                                     <div class="icon-container"><i class="fas fa-mars"></i></div>
                                     <h5>테토남</h5>
                                     <p class="small">논리적, 도전적</p>
+                                    <div class="personality-preview">
+                                        <span class="preview-text">자세히 보기</span>
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card teto-female">
+                                <div class="personality-type-card teto-female" data-personality="teto-female">
                                     <div class="icon-container"><i class="fas fa-venus"></i></div>
                                     <h5>테토녀</h5>
                                     <p class="small">활발함, 직설적</p>
+                                    <div class="personality-preview">
+                                        <span class="preview-text">자세히 보기</span>
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card egen-male">
+                                <div class="personality-type-card egen-male" data-personality="egen-male">
                                     <div class="icon-container"><i class="fas fa-mars"></i></div>
                                     <h5>에겐남</h5>
                                     <p class="small">섬세함, 공감능력</p>
+                                    <div class="personality-preview">
+                                        <span class="preview-text">자세히 보기</span>
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card egen-female">
+                                <div class="personality-type-card egen-female" data-personality="egen-female">
                                     <div class="icon-container"><i class="fas fa-venus"></i></div>
                                     <h5>에겐녀</h5>
                                     <p class="small">차분함, 감수성</p>
+                                    <div class="personality-preview">
+                                        <span class="preview-text">자세히 보기</span>
+                                        <i class="fas fa-info-circle"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -306,6 +325,9 @@
     <script src="assets/js/language-loader.js"></script>
     <script src="assets/js/language-translator.js"></script>
     <script src="assets/js/language-dropdown.js"></script>
+    <!-- Landing Page Interactions -->
+    <script src="assets/js/landing-interactions.js"></script>
+    
     <!-- Main App (AI 기능 제거 버전) -->
     <script src="assets/js/app-modified.js"></script>
     
