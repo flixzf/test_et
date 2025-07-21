@@ -64,15 +64,15 @@ const ErrorHandler = {
             
             // 이미지 로딩 오류
             if (target.tagName === 'IMG') {
-                console.error('이미지 로딩 오류:', target.src);
+                handleImageError(event, target.src);
                 
                 // 중요한 이미지인 경우 오류 표시
                 if (target.classList.contains('critical-image')) {
                     this.showError('resource', 'imageLoad');
                 }
                 
-                // 대체 이미지 표시
-                target.src = 'assets/images/image-placeholder.png';
+                // 대체 이미지 표시 (data URI 사용)
+                target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuydtOuvuOyngCDsl4bsnYw8L3RleHQ+PC9zdmc+';
                 target.classList.add('image-load-error');
             }
         }, true); // 캡처 단계에서 이벤트 처리
@@ -628,3 +628,14 @@ window.errorHandler = ErrorHandler;
 document.addEventListener('DOMContentLoaded', () => {
     ErrorHandler.init();
 });
+
+// 이미지 로딩 오류 처리 개선
+function handleImageError(error, imgSrc) {
+    // 이미지 로딩 오류를 덜 시끄럽게 처리
+    if (imgSrc && (imgSrc.includes('image-placeholder.png') || imgSrc.startsWith('data:image/'))) {
+        // placeholder 이미지나 data URI 오류는 무시
+        return;
+    }
+    
+    console.warn('이미지 로딩 오류:', imgSrc || error);
+}
