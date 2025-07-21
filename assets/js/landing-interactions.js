@@ -130,7 +130,7 @@ function addTypingAnimation() {
     
     let currentIndex = 0;
     let isAnimating = false;
-    const typingElement = $('.typing-text');
+    const typingElement = $('.modern-typing');
     
     /**
      * 텍스트를 한 글자씩 타이핑하는 함수
