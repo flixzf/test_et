@@ -1,0 +1,56 @@
+{
+  "app": {
+    "title": "テト・エゲン性格診断テスト",
+    "description": "あなたのテト・エゲン性格タイプを発見しよう！",
+    "metaDescription": "あなたのテト・エゲン性格タイプを発見しよう！"
+  },
+  "startScreen": {
+    "mainTitle": "たった2分！あなたのテト・エゲン性格は？",
+    "typingTexts": [
+      "自分はどんな人間？",
+      "他の人は私をどう思っている？"
+    ],
+    "intro": "アンケートと顔写真で、あなたがテト男・テト女・エゲン男・エゲン女のどれかを診断！",
+    "startButton": "テストを始める",
+    "infoTitle": "テト・エゲン性格タイプとは？",
+    "infoDescription": "テト・エゲン性格タイプは、社会的・行動的特徴に基づいて男性性と女性性を区別する分類法です。テトは積極的で論理的な傾向、エゲンは繊細で感情的な傾向を表します。",
+    "moreInfoButton": "詳しく見る",
+    "foodChainTitle": "恋愛フードチェーン",
+    "testInfo": {
+      "timeRequired": "所要時間",
+      "timeValue": "約3分",
+      "questionCount": "質問数",
+      "questionValue": "10",
+      "photoUpload": "写真アップロード",
+      "photoValue": "任意"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "テト男",
+        "traits": "論理的、挑戦的"
+      },
+      "tetoFemale": {
+        "title": "テト女",
+        "traits": "エネルギッシュ、率直"
+      },
+      "egenMale": {
+        "title": "エゲン男",
+        "traits": "繊細、共感的"
+      },
+      "egenFemale": {
+        "title": "エゲン女",
+        "traits": "穏やか、感情的"
+      }
+    }
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "retry": "再試行",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "close": "閉じる",
+    "save": "保存",
+    "back": "戻る"
+  }
+} 

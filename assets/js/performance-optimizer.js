@@ -149,7 +149,7 @@ function lazyLoad(resourceType, url) {
     return new Promise((resolve, reject) => {
         // undefined 체크 및 기본값 설정
         if (!resourceType) {
-            console.warn('리소스 타입이 정의되지 않았습니다. 기본값 사용');
+            // console.warn('리소스 타입이 정의되지 않았습니다. 기본값 사용');
             resolve();
             return;
         }

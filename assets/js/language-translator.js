@@ -68,21 +68,21 @@ const languageTranslator = (function() {
             }
         }
         
-        // If the result is not a string, return the key
-        if (typeof result !== 'string') {
-            console.warn(`Translation key does not resolve to a string: ${key}`);
+        // If the result is not a string or array, return the key
+        if (typeof result !== 'string' && !Array.isArray(result)) {
+            console.warn(`Translation key does not resolve to a string or array: ${key}`);
             return key;
         }
         
-        // Replace parameters in the translation
+        // Replace parameters in the translation (only for string)
         let translatedText = result;
-        if (Object.keys(params).length > 0) {
+        if (typeof translatedText === 'string' && Object.keys(params).length > 0) {
             Object.entries(params).forEach(([paramKey, paramValue]) => {
                 translatedText = translatedText.replace(new RegExp(`{${paramKey}}`, 'g'), paramValue);
             });
         }
         
-        // Cache the translated string
+        // Cache the translated string/array
         translationCache.set(cacheKey, translatedText);
         
         return translatedText;
@@ -106,6 +106,9 @@ const languageTranslator = (function() {
     // Cache for DOM elements that need translation
     let translationElementsCache = null;
     let titleKeyCache = null;
+
+    // Fix: elementCache 선언 (UI 캐시용)
+    const elementCache = new Map();
     
     /**
      * Manage the size of the last applied translations cache
