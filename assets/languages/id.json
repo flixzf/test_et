@@ -177,5 +177,54 @@
     "camera": "Tidak dapat mengakses kamera.",
     "photoProcessing": "Gagal memproses foto.",
     "generic": "Terjadi kesalahan yang tidak diketahui."
+  },
+  "infoModal": {
+    "title": "Pengantar Tipe Kepribadian Teto-Egen",
+    "closeButton": "Tutup",
+    "sections": {
+      "introduction": {
+        "title": "Apa itu Tipe Kepribadian Teto-Egen?",
+        "content": "Tipe kepribadian Teto-Egen adalah sistem klasifikasi yang membedakan maskulinitas dan feminitas berdasarkan karakteristik sosial dan perilaku. Terlepas dari jenis kelamin biologis, individu dikategorikan ke dalam karakteristik Teto (agresif, logis) dan Egen (sensitif, emosional), yang selanjutnya dibagi menjadi Teto Pria, Teto Wanita, Egen Pria, dan Egen Wanita berdasarkan maskulinitas dan feminitas."
+      },
+      "foodChain": {
+        "title": "Rantai Makanan Kencan",
+        "content1": "Dalam sistem tipe kepribadian Teto-Egen, ada konsep menarik yang disebut 'rantai makanan kencan'. Ini mewakili struktur sirkular di mana tipe-tipe secara alami tertarik pada tipe lain.",
+        "content2": "Wanita Egen cenderung tertarik pada Pria Egen, Pria Egen pada Wanita Teto, Wanita Teto pada Pria Teto, dan Pria Teto pada Wanita Egen. Tentu saja, ini bukan aturan mutlak tetapi pola yang diamati untuk kesenangan."
+      },
+      "personalityTraits": {
+        "title": "Karakteristik Setiap Tipe",
+        "tetoMale": {
+          "title": "Teto Pria",
+          "traits": ["Agresi kuat dan insting berburu", "Asertif kuat dan kepemimpinan", "Memprioritaskan logika atas emosi", "Memiliki banyak teman atau terbiasa dengan kehidupan kelompok", "Tertarik pada dunia luar", "Menikmati menganalisis dan menilai, berorientasi realitas", "Lebih suka hasil praktis daripada ideal abstrak", "Sederhana dan mendorong melalui setelah keputusan dibuat", "Menikmati tantangan dan petualangan", "Sering tidak terlalu tertarik pada mode, parfum, dll."]
+        },
+        "tetoFemale": {
+          "title": "Teto Wanita",
+          "traits": ["Kepribadian hidup dan energik", "Sosial dengan lingkaran teman luas", "Lebih suka ekspresi langsung dan jujur", "Berorientasi tujuan dengan keinginan pencapaian kuat", "Menikmati kompetisi dan lebih suka situasi menantang", "Ekspresi emosional kaya dan penuh gairah", "Lebih suka pendekatan praktis dan realistis", "Kecenderungan independen dan self-directed kuat", "Tegas dan membuat keputusan cepat", "Ekstrovert dan menikmati aktivitas sosial"]
+        },
+        "egenMale": {
+          "title": "Egen Pria",
+          "traits": ["Memiliki kecenderungan sensitif dan emosional", "Sensitif terhadap tren dan tertarik pada mode dan kecantikan", "Memahami emosi orang lain dengan baik dengan empati luar biasa", "Kecenderungan pasifis yang menghargai harmoni dan keseimbangan", "Kaya rasa artistik dan kreativitas", "Menunjukkan perhatian hati-hati dan kebaikan", "Lebih suka kompromi dan koordinasi daripada konflik", "Ekspresi emosional kaya dan keterampilan komunikasi baik", "Menghargai nilai estetika", "Mencari pertukaran mendalam dalam hubungan manusia"]
+        },
+        "egenFemale": {
+          "title": "Egen Wanita",
+          "traits": ["Kecenderungan tenang dan introspektif kuat", "Halus dan kaya sensitivitas", "Merespons emosi orang lain dengan sensitif", "Menunjukkan sikap tenang dan hati-hati", "Lebih suka lingkungan stabil dan nyaman", "Menghargai hubungan mendalam dan komunikasi", "Rasa artistik luar biasa dan mata estetika", "Tertarik pada refleksi diri dan pertumbuhan internal", "Perhatian mendalam dan kecenderungan altruistik", "Intuitif dan berwawasan"]
+        }
+      }
+    }
+  },
+  "languageSelector": {
+    "label": "Bahasa",
+    "selectLanguage": "Pilih bahasa"
+  },
+  "testPage": {
+    "title": "Tes Kepribadian Teto-Egen - Mode Tes",
+    "subtitle": "Mode Tes",
+    "backToMain": "Kembali ke Utama"
+  },
+  "personalityTypes": {
+    "tetoMale": "Teto Pria",
+    "tetoFemale": "Teto Wanita",
+    "egenMale": "Egen Pria",
+    "egenFemale": "Egen Wanita"
   }
 } 

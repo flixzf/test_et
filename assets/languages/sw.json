@@ -43,5 +43,114 @@
     "close": "Funga",
     "save": "Hifadhi",
     "back": "Rudi"
+  },
+  "infoModal": {
+    "title": "Utangulizi wa Aina za Utu Teto-Egen",
+    "closeButton": "Funga",
+    "sections": {
+      "introduction": {
+        "title": "Aina ya Utu Teto-Egen ni nini?",
+        "content": "Aina ya utu Teto-Egen ni mfumo wa uainishaji unaotofautisha uume na uke kulingana na sifa za kijamii na kitabia. Bila kujali jinsia ya kibiolojia, watu hupangwa katika sifa za Teto (uchokozi, mantiki) na Egen (nyeti, hisia), ambazo hugawanywa zaidi kuwa Mwanaume Teto, Mwanamke Teto, Mwanaume Egen na Mwanamke Egen kulingana na uume na uke."
+      },
+      "foodChain": {
+        "title": "Mnyororo wa Chakula wa Uchumba",
+        "content1": "Katika mfumo wa aina za utu Teto-Egen, kuna dhana ya kuvutia inayoitwa 'mnyororo wa chakula wa uchumba'. Hii inawakilisha muundo wa mduara wa aina gani zinavutiwa kiasili na aina nyingine.",
+        "content2": "Wanawake Egen huwa wanavutiwa na Wanaume Egen, Wanaume Egen na Wanawake Teto, Wanawake Teto na Wanaume Teto, na Wanaume Teto na Wanawake Egen. Bila shaka, hii si sheria kabisa lakini muundo unaotazamwa kwa furaha."
+      },
+      "personalityTraits": {
+        "title": "Sifa za Kila Aina",
+        "tetoMale": {
+          "title": "Mwanaume Teto",
+          "traits": ["Uchokozi mkubwa na silika ya kuwinda", "Kujitetea kwa nguvu na uongozi", "Inatanguliza mantiki juu ya hisia", "Ana marafiki wengi au amezoea maisha ya kikundi", "Anavutiwa na ulimwengu wa nje", "Anapenda kuchambua na kutoa maamuzi, inayolenga uhalisia", "Anapendelea matokeo ya vitendo juu ya maadili yasiyo ya kawaida", "Rahisi na inasisitiza mara moja maamuzi yanapofanywa", "Anapenda changamoto na matukio", "Mara nyingi havutiwi sana na mitindo, manukato n.k."]
+        },
+        "tetoFemale": {
+          "title": "Mwanamke Teto",
+          "traits": ["Utu mzuri na wenye nguvu", "Mshiriki wa jamii na kituo cha marafiki pana", "Anapendelea maelezo ya moja kwa moja na ya ukweli", "Inayolenga lengo na matakwa makubwa ya mafanikio", "Anapenda ushindani na anapendelea hali zenye changamoto", "Maelezo ya hisia tajiri na yenye shauku", "Anapendelea mbinu za vitendo na halisia", "Mwelekeo mkubwa wa kujitegemea na kujiongoza", "Mwenye uamuzi na hufanya maamuzi haraka", "Mshiriki wa nje na anapenda shughuli za jamii"]
+        },
+        "egenMale": {
+          "title": "Mwanaume Egen",
+          "traits": ["Ana mwelekeo wa nyeti na hisia", "Nyeti kwa mitindo na anavutiwa na mitindo na urembo", "Anaelewa hisia za wengine vizuri na huruma bora", "Mwelekeo wa amani unaothamini upatano na usawa", "Tajiri katika hisia ya kisanii na ubunifu", "Anaonyesha uangalifu na wema", "Anapendelea maelewano na uratibu juu ya migogoro", "Maelezo ya hisia tajiri na ustadi mzuri wa mawasiliano", "Anathamini maadili ya urembo", "Anatafuta maelewano ya kina katika mahusiano ya binadamu"]
+        },
+        "egenFemale": {
+          "title": "Mwanamke Egen",
+          "traits": ["Mwelekeo mkubwa wa utulivu na kujichunguza", "Nyeti na tajiri katika hisia", "Anajibu hisia za wengine kwa nyeti", "Anaonyesha mtazamo wa utulivu na tahadhari", "Anapendelea mazingira thabiti na starehe", "Anathamini mahusiano ya kina na mawasiliano", "Hisia ya kisanii bora na jicho la urembo", "Anavutiwa na kujichunguza na ukuaji wa ndani", "Uangalifu wa kina na mwelekeo wa kujitolea", "Intuitiv na mwenye busara"]
+        }
+      }
+    }
+  },
+  "surveyScreen": {
+    "progress": "{current} / {total}",
+    "previousButton": "Iliyotangulia",
+    "questionPrefix": "S"
+  },
+  "photoScreen": {
+    "title": "Pakia Picha ya Uso",
+    "optional": "Hiari",
+    "description": "Tafadhali pakia picha ya uso kwa uchambuzi sahihi zaidi wa aina ya utu Teto-Egen.",
+    "tips": {
+      "faceFront": "Uso wa mbele",
+      "lighting": "Taa nzuri",
+      "clarity": "Picha wazi"
+    },
+    "uploadArea": {
+      "instruction": "Bofya hapa au buruta naachia picha",
+      "formats": "Muundo unaoafiki: JPG, PNG, GIF (kiwango cha juu 5MB)"
+    },
+    "processing": "Inachakata picha...",
+    "uploadSuccess": "Picha imepakiwa",
+    "analyzeButton": "Chambua",
+    "skipButton": "Ruka",
+    "privacyNotice": "Picha zilizopakiwa zinafutwa mara moja baada ya uchambuzi na hazihifadhiwi.",
+    "errors": {
+      "imageOnly": "Faili za picha pekee zinaweza kupakiwa.",
+      "sizeLimit": "Ukubwa wa faili lazima uwe chini ya 5MB.",
+      "readError": "Hitilafu ilitokea wakati wa kusoma faili.",
+      "processingError": "Hitilafu ilitokea wakati wa kuchakata picha."
+    }
+  },
+  "resultScreen": {
+    "yourType": "Aina yako ya utu Teto-Egen ni",
+    "characteristics": "Sifa za {type}",
+    "facialAnalysis": "Uchambuzi wa Sifa za Uso",
+    "scoreGraph": "Alama za Mwelekeo",
+    "scores": {
+      "tetoScore": "Mwelekeo wa Teto",
+      "egenScore": "Mwelekeo wa Egen",
+      "masculinityScore": "Uume",
+      "femininityScore": "Uke"
+    },
+    "foodChain": {
+      "title": "Mnyororo wa Chakula wa Uchumba",
+      "description": "Mwanamke Egen → Mwanaume Egen → Mwanamke Teto → Mwanaume Teto → Mwanamke Egen"
+    },
+    "share": {
+      "title": "Shiriki Matokeo",
+      "linkCopied": "Kiungo kimenakiliwa kwenye clipboard.",
+      "downloadNotReady": "Kipengee cha kupakua picha ya matokeo kinakuja hivi karibuni."
+    },
+    "restartButton": "Fanya Mtihani Tena"
+  },
+  "loadingScreen": {
+    "analyzing": "Inachambua..."
+  },
+  "alerts": {
+    "questionsLoadError": "Hitilafu ilitokea wakati wa kupakia data ya masuala. Tafadhali onyesha upya ukurasa.",
+    "leaveConfirmation": "Mtihani unaendelea. Una uhakika unataka kuondoka?",
+    "leaveWarning": "Mtihani unaendelea. Ukiondoka ukurasa, maendeleo yako hayatakuwa yamehifadhiwa."
+  },
+  "languageSelector": {
+    "label": "Lugha",
+    "selectLanguage": "Chagua lugha"
+  },
+  "testPage": {
+    "title": "Mtihani wa Utu Teto-Egen - Hali ya Mtihani",
+    "subtitle": "Hali ya Mtihani",
+    "backToMain": "Rudi kwa Kuu"
+  },
+  "personalityTypes": {
+    "tetoMale": "Mwanaume Teto",
+    "tetoFemale": "Mwanamke Teto",
+    "egenMale": "Mwanaume Egen",
+    "egenFemale": "Mwanamke Egen"
   }
 } 

@@ -43,5 +43,114 @@
     "close": "Schließen",
     "save": "Speichern",
     "back": "Zurück"
+  },
+  "infoModal": {
+    "title": "Einführung in Teto-Egen Persönlichkeitstypen",
+    "closeButton": "Schließen",
+    "sections": {
+      "introduction": {
+        "title": "Was ist der Teto-Egen Persönlichkeitstyp?",
+        "content": "Der Teto-Egen Persönlichkeitstyp ist ein Klassifizierungssystem, das Männlichkeit und Weiblichkeit basierend auf sozialen und verhaltensbezogenen Merkmalen unterscheidet. Unabhängig vom biologischen Geschlecht werden Individuen in Teto (aggressiv, logisch) und Egen (sensibel, emotional) Merkmale kategorisiert, die weiter in Teto Mann, Teto Frau, Egen Mann und Egen Frau unterteilt werden basierend auf Männlichkeit und Weiblichkeit."
+      },
+      "foodChain": {
+        "title": "Dating Food Chain",
+        "content1": "Im Teto-Egen Persönlichkeitstyp-System gibt es ein interessantes Konzept namens 'Dating Food Chain'. Dies stellt eine zirkuläre Struktur dar, in der Typen natürlich zu anderen Typen hingezogen werden.",
+        "content2": "Egen Frauen neigen dazu, zu Egen Männern hingezogen zu werden, Egen Männer zu Teto Frauen, Teto Frauen zu Teto Männern und Teto Männer zu Egen Frauen. Natürlich ist das keine absolute Regel, sondern ein Muster, das zum Spaß beobachtet wird."
+      },
+      "personalityTraits": {
+        "title": "Merkmale jedes Typs",
+        "tetoMale": {
+          "title": "Teto Mann",
+          "traits": ["Starke Aggression und Jagdinstinkt", "Starke Selbstbehauptung und Führung", "Priorisiert Logik über Emotion", "Hat viele Freunde oder ist an Gruppenleben gewöhnt", "Interessiert am äußeren Welt", "Genießt Analysieren und Urteilen, realitätsorientiert", "Bevorzugt praktische Ergebnisse über abstrakte Ideale", "Einfach und drängt durch, sobald eine Entscheidung getroffen ist", "Genießt Herausforderungen und Abenteuer", "Oft nicht sehr interessiert an Mode, Parfüm usw."]
+        },
+        "tetoFemale": {
+          "title": "Teto Frau",
+          "traits": ["Lebhaft und energiegeladene Persönlichkeit", "Sozial mit einem weiten Freundeskreis", "Bevorzugt direkte und ehrliche Ausdrucksweise", "Zielorientiert mit starken Erfolgsverlangen", "Genießt Wettbewerb und bevorzugt herausfordernde Situationen", "Reiche emotionale Ausdrucksweise und leidenschaftlich", "Bevorzugt praktische und realistische Ansätze", "Starke unabhängige und selbstgesteuerte Tendenzen", "Entschlossen und trifft schnelle Entscheidungen", "Extravertiert und genießt soziale Aktivitäten"]
+        },
+        "egenMale": {
+          "title": "Egen Mann",
+          "traits": ["Hat sensible und emotionale Tendenzen", "Sensibel für Trends und interessiert an Mode und Schönheit", "Versteht Emotionen anderer gut mit exzellenter Empathie", "Pazifistische Tendenzen, die Harmonie und Balance schätzen", "Reich an künstlerischem Sinn und Kreativität", "Zeigt sorgfältige Rücksicht und Freundlichkeit", "Bevorzugt Kompromiss und Koordination über Konflikt", "Reiche emotionale Ausdrucksweise und gute Kommunikationsfähigkeiten", "Schätzt ästhetische Werte", "Sucht tiefe Austausche in menschlichen Beziehungen"]
+        },
+        "egenFemale": {
+          "title": "Egen Frau",
+          "traits": ["Starke ruhige und introspektive Tendenzen", "Delikat und reich an Sensibilität", "Reagiert sensibel auf Emotionen anderer", "Zeigt ruhige und vorsichtige Haltung", "Bevorzugt stabile und komfortable Umgebungen", "Schätzt tiefe Beziehungen und Kommunikation", "Exzellenter künstlerischer Sinn und ästhetisches Auge", "Interessiert an Selbstreflexion und innerem Wachstum", "Tiefe Rücksicht und altruistische Tendenzen", "Intuitiv und einsichtig"]
+        }
+      }
+    }
+  },
+  "surveyScreen": {
+    "progress": "{current} / {total}",
+    "previousButton": "Vorherige",
+    "questionPrefix": "F"
+  },
+  "photoScreen": {
+    "title": "Gesichtsfoto hochladen",
+    "optional": "Optional",
+    "description": "Bitte laden Sie ein Gesichtsfoto hoch für eine genauere Teto-Egen Persönlichkeitstyp-Analyse.",
+    "tips": {
+      "faceFront": "Frontal",
+      "lighting": "Gute Beleuchtung",
+      "clarity": "Klares Bild"
+    },
+    "uploadArea": {
+      "instruction": "Hier klicken oder Foto per Drag-and-Drop",
+      "formats": "Unterstützte Formate: JPG, PNG, GIF (max 5MB)"
+    },
+    "processing": "Bild verarbeiten...",
+    "uploadSuccess": "Bild wurde hochgeladen",
+    "analyzeButton": "Analysieren",
+    "skipButton": "Überspringen",
+    "privacyNotice": "Hochgeladene Fotos werden sofort nach der Analyse gelöscht und nicht gespeichert.",
+    "errors": {
+      "imageOnly": "Nur Bilddateien können hochgeladen werden.",
+      "sizeLimit": "Dateigröße muss unter 5MB liegen.",
+      "readError": "Fehler beim Lesen der Datei.",
+      "processingError": "Fehler bei der Bildverarbeitung."
+    }
+  },
+  "resultScreen": {
+    "yourType": "Ihr Teto-Egen Persönlichkeitstyp ist",
+    "characteristics": "Merkmale von {type}",
+    "facialAnalysis": "Gesichtsmerkmalsanalyse",
+    "scoreGraph": "Tendenz Scores",
+    "scores": {
+      "tetoScore": "Teto Tendenz",
+      "egenScore": "Egen Tendenz",
+      "masculinityScore": "Männlichkeit",
+      "femininityScore": "Weiblichkeit"
+    },
+    "foodChain": {
+      "title": "Dating Food Chain",
+      "description": "Egen Frau → Egen Mann → Teto Frau → Teto Mann → Egen Frau"
+    },
+    "share": {
+      "title": "Ergebnisse teilen",
+      "linkCopied": "Link wurde in die Zwischenablage kopiert.",
+      "downloadNotReady": "Ergebnisbild-Download-Funktion kommt bald."
+    },
+    "restartButton": "Test wiederholen"
+  },
+  "loadingScreen": {
+    "analyzing": "Analysiere..."
+  },
+  "alerts": {
+    "questionsLoadError": "Fehler beim Laden der Fragendaten. Bitte die Seite aktualisieren.",
+    "leaveConfirmation": "Der Test läuft. Sind Sie sicher, dass Sie verlassen möchten?",
+    "leaveWarning": "Der Test läuft. Wenn Sie die Seite verlassen, wird Ihr Fortschritt nicht gespeichert."
+  },
+  "languageSelector": {
+    "label": "Sprache",
+    "selectLanguage": "Sprache auswählen"
+  },
+  "testPage": {
+    "title": "Teto-Egen Persönlichkeitstest - Testmodus",
+    "subtitle": "Testmodus",
+    "backToMain": "Zurück zum Hauptmenü"
+  },
+  "personalityTypes": {
+    "tetoMale": "Teto Mann",
+    "tetoFemale": "Teto Frau",
+    "egenMale": "Egen Mann",
+    "egenFemale": "Egen Frau"
   }
 } 

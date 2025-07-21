@@ -43,5 +43,114 @@
     "close": "Fechar",
     "save": "Salvar",
     "back": "Voltar"
+  },
+  "infoModal": {
+    "title": "Introdução aos Tipos de Personalidade Teto-Egen",
+    "closeButton": "Fechar",
+    "sections": {
+      "introduction": {
+        "title": "O que é o Tipo de Personalidade Teto-Egen?",
+        "content": "O tipo de personalidade Teto-Egen é um sistema de classificação que distingue masculinidade e feminilidade com base em características sociais e comportamentais. Independentemente do sexo biológico, os indivíduos são categorizados em características Teto (agressivo, lógico) e Egen (sensível, emocional), que são divididas em Homem Teto, Mulher Teto, Homem Egen e Mulher Egen com base em masculinidade e feminilidade."
+      },
+      "foodChain": {
+        "title": "Cadeia Alimentar de Namoro",
+        "content1": "No sistema de tipos de personalidade Teto-Egen, há um conceito interessante chamado 'cadeia alimentar de namoro'. Isso representa uma estrutura circular de quais tipos são naturalmente atraídos por outros tipos.",
+        "content2": "Mulheres Egen tendem a ser atraídas por Homens Egen, Homens Egen por Mulheres Teto, Mulheres Teto por Homens Teto, e Homens Teto por Mulheres Egen. Claro, isso não é uma regra absoluta, mas um padrão observado por diversão."
+      },
+      "personalityTraits": {
+        "title": "Características de Cada Tipo",
+        "tetoMale": {
+          "title": "Homem Teto",
+          "traits": ["Forte agressão e instinto de caça", "Forte autoafirmação e liderança", "Prioriza a lógica sobre a emoção", "Tem muitos amigos ou está acostumado à vida em grupo", "Interessado no mundo externo", "Gosta de analisar e julgar, orientado para a realidade", "Prefere resultados práticos a ideais abstratos", "Simples e persiste uma vez que a decisão é tomada", "Gosta de desafios e aventuras", "Muitas vezes não muito interessado em moda, perfume, etc."]
+        },
+        "tetoFemale": {
+          "title": "Mulher Teto",
+          "traits": ["Personalidade viva e energética", "Sociável com um amplo círculo de amigos", "Prefere expressão direta e honesta", "Orientada para objetivos com fortes desejos de realização", "Gosta de competição e prefere situações desafiadoras", "Expressão emocional rica e apaixonada", "Prefere abordagens práticas e realistas", "Fortes tendências independentes e autodirigidas", "Decisiva e toma decisões rápidas", "Extrovertida e gosta de atividades sociais"]
+        },
+        "egenMale": {
+          "title": "Homem Egen",
+          "traits": ["Tem tendências sensíveis e emocionais", "Sensível a tendências e interessado em moda e beleza", "Entende bem as emoções dos outros com excelente empatia", "Tendências pacifistas que valorizam harmonia e equilíbrio", "Rico senso artístico e criatividade", "Mostra consideração cuidadosa e bondade", "Prefere compromisso e coordenação ao conflito", "Expressão emocional rica e boas habilidades de comunicação", "Valoriza valores estéticos", "Busca trocas profundas em relacionamentos humanos"]
+        },
+        "egenFemale": {
+          "title": "Mulher Egen",
+          "traits": ["Fortes tendências calmas e introspectivas", "Delicada e rica em sensibilidade", "Responde sensivelmente às emoções dos outros", "Mostra atitude calma e cuidadosa", "Prefere ambientes estáveis e confortáveis", "Valoriza relacionamentos profundos e comunicação", "Excelente senso artístico e olho estético", "Interessada em autorreflexão e crescimento interior", "Consideração profunda e tendências altruístas", "Intuitiva e perspicaz"]
+        }
+      }
+    }
+  },
+  "surveyScreen": {
+    "progress": "{current} / {total}",
+    "previousButton": "Anterior",
+    "questionPrefix": "Q"
+  },
+  "photoScreen": {
+    "title": "Carregar Foto do Rosto",
+    "optional": "Opcional",
+    "description": "Por favor, carregue uma foto do rosto para uma análise mais precisa do tipo de personalidade Teto-Egen.",
+    "tips": {
+      "faceFront": "De frente",
+      "lighting": "Boa iluminação",
+      "clarity": "Imagem clara"
+    },
+    "uploadArea": {
+      "instruction": "Clique aqui ou arraste e solte uma foto",
+      "formats": "Formatos suportados: JPG, PNG, GIF (máx 5MB)"
+    },
+    "processing": "Processando imagem...",
+    "uploadSuccess": "Imagem foi carregada",
+    "analyzeButton": "Analisar",
+    "skipButton": "Pular",
+    "privacyNotice": "Fotos carregadas são deletadas imediatamente após a análise e não são armazenadas.",
+    "errors": {
+      "imageOnly": "Apenas arquivos de imagem podem ser carregados.",
+      "sizeLimit": "O tamanho do arquivo deve ser menor que 5MB.",
+      "readError": "Ocorreu um erro ao ler o arquivo.",
+      "processingError": "Ocorreu um erro ao processar a imagem."
+    }
+  },
+  "resultScreen": {
+    "yourType": "Seu tipo de personalidade Teto-Egen é",
+    "characteristics": "Características de {type}",
+    "facialAnalysis": "Análise de Características Faciais",
+    "scoreGraph": "Pontuações de Tendência",
+    "scores": {
+      "tetoScore": "Tendência Teto",
+      "egenScore": "Tendência Egen",
+      "masculinityScore": "Masculinidade",
+      "femininityScore": "Feminilidade"
+    },
+    "foodChain": {
+      "title": "Cadeia Alimentar de Namoro",
+      "description": "Mulher Egen → Homem Egen → Mulher Teto → Homem Teto → Mulher Egen"
+    },
+    "share": {
+      "title": "Compartilhar Resultados",
+      "linkCopied": "Link foi copiado para a área de transferência.",
+      "downloadNotReady": "Recurso de download de imagem de resultado em breve."
+    },
+    "restartButton": "Fazer o Teste Novamente"
+  },
+  "loadingScreen": {
+    "analyzing": "Analisando..."
+  },
+  "alerts": {
+    "questionsLoadError": "Ocorreu um erro ao carregar dados de perguntas. Por favor, atualize a página.",
+    "leaveConfirmation": "O teste está em andamento. Tem certeza que quer sair?",
+    "leaveWarning": "O teste está em andamento. Se você sair da página, seu progresso não será salvo."
+  },
+  "languageSelector": {
+    "label": "Idioma",
+    "selectLanguage": "Selecionar idioma"
+  },
+  "testPage": {
+    "title": "Teste de Personalidade Teto-Egen - Modo Teste",
+    "subtitle": "Modo Teste",
+    "backToMain": "Voltar para o Principal"
+  },
+  "personalityTypes": {
+    "tetoMale": "Homem Teto",
+    "tetoFemale": "Mulher Teto",
+    "egenMale": "Homem Egen",
+    "egenFemale": "Mulher Egen"
   }
 } 

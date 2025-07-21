@@ -20,6 +20,9 @@ const languageLoader = (function() {
         persistEnabled: true // Whether to persist cache to local storage
     };
     
+    // Cache version - increment when translation structure changes to invalidate old caches
+    const currentCacheVersion = 2;
+    
     /**
      * Initialize the cache from local storage if available
      */
@@ -37,7 +40,7 @@ const languageLoader = (function() {
                     if (item && item.data && item.metadata) {
                         // Check if the cache item is expired
                         const isExpired = Date.now() - item.metadata.timestamp > cacheConfig.expirationTime;
-                        if (!isExpired) {
+                        if (!isExpired && item.metadata.version === currentCacheVersion) {
                             cache.set(langCode, item.data);
                             cacheMetadata.set(langCode, item.metadata);
                             console.log(`Restored cached translations for ${langCode} from local storage`);
@@ -141,7 +144,8 @@ const languageLoader = (function() {
         cacheMetadata.set(langCode, {
             timestamp: Date.now(),
             lastAccessed: Date.now(),
-            accessCount: 0
+            accessCount: 0,
+            version: currentCacheVersion
         });
         
         // Persist cache to local storage
@@ -214,7 +218,8 @@ const languageLoader = (function() {
     function loadLanguage(langCode) {
         // Check if in cache and not expired
         const cachedData = getFromCache(langCode);
-        if (cachedData) {
+        const metadata = cacheMetadata.get(langCode);
+        if (cachedData && metadata && metadata.version === currentCacheVersion) {
             console.log(`Using cached translations for ${langCode}`);
             return Promise.resolve(cachedData);
         }
