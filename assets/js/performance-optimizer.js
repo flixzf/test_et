@@ -295,6 +295,7 @@ window.performanceOptimizer = {
     init,
     optimizeImage,
     lazyLoad,
+    setupLazyLoading: lazyLoad, // lazyLoad 함수를 setupLazyLoading으로도 사용
     debounce,
     throttle,
     cleanupMemory,
