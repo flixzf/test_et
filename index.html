@@ -2,7 +2,14 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover">
+    <!-- Mobile Optimization Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#667eea">
+    <meta name="msapplication-navbutton-color" content="#667eea">
+    <meta name="apple-mobile-web-app-title" content="테토-에겐 테스트">
     <title>딱 2분! 당신의 테토-에겐 성격은?</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +27,8 @@
     <link rel="stylesheet" href="assets/css/performance-optimized.css">
     <!-- Modern Design System -->
     <link rel="stylesheet" href="assets/css/modern-design-system.css">
+    <!-- Mobile Optimizations -->
+    <link rel="stylesheet" href="assets/css/mobile-optimized.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <!-- Open Graph Tags -->
@@ -28,7 +37,7 @@
     <meta property="og:image" content="assets/images/og-image.jpg">
     <meta property="og:url" content="https://your-domain.com">
 </head>
-<body>
+<body class="smooth-scroll animation-container">
     <!-- Language Dropdown Container -->
     <div id="language-dropdown-container"></div>
     
@@ -37,12 +46,12 @@
         <!-- Start Screen -->
         <div id="start-screen" class="screen active">
             <!-- Hero Background -->
-            <div class="hero-background">
+            <div class="hero-background parallax-element">
                 <div class="floating-shapes">
-                    <div class="shape shape-1"></div>
-                    <div class="shape shape-2"></div>
-                    <div class="shape shape-3"></div>
-                    <div class="shape shape-4"></div>
+                    <div class="shape shape-1 parallax-element gpu-accelerated"></div>
+                    <div class="shape shape-2 parallax-element gpu-accelerated"></div>
+                    <div class="shape shape-3 parallax-element gpu-accelerated"></div>
+                    <div class="shape shape-4 parallax-element gpu-accelerated"></div>
                 </div>
             </div>
             
@@ -71,85 +80,130 @@
                             </div>
                         </div>
                         
-                        <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                        <p class="lead mb-4 animate-on-scroll">
                             설문조사와 얼굴 사진을 통해 당신이 <span class="badge bg-primary">테토남</span>, 
                             <span class="badge bg-danger">테토녀</span>, <span class="badge bg-success">에겐남</span>, 
                             <span class="badge bg-warning text-dark">에겐녀</span> 중 어떤 유형인지 알아보세요!
                         </p>
                         
-                        <div class="card mb-4 animate__animated animate__fadeIn animate__delay-1s">
+                        <div class="card mb-4 animate-on-scroll glass-card">
                             <div class="card-body">
                                 <h5 class="card-title"><i class="fas fa-info-circle me-2"></i>테토-에겐 성격 유형이란?</h5>
                                 <p class="card-text">
                                     테토-에겐 성격 유형은 사회적·행동적 특성에 따라 남성성과 여성성을 구분한 성격 유형 분류법입니다. 
                                     테토는 공격적이고 논리적인 성향을, 에겐은 섬세하고 감성적인 성향을 나타냅니다.
                                 </p>
-                                <button id="more-info-btn" class="btn btn-outline-primary btn-sm mt-2">
+                                <button id="more-info-btn" class="btn btn-outline-primary btn-sm mt-2 advanced-hover">
                                     <i class="fas fa-plus-circle me-1"></i> 더 알아보기
                                 </button>
                             </div>
                         </div>
                         
-                        <div class="food-chain-container p-3 mb-4 animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="food-chain-container p-3 mb-4 animate-on-scroll glass-card">
                             <h5><i class="fas fa-heart me-2"></i>연애 먹이사슬</h5>
                             <div class="food-chain-diagram">
                                 <div class="row align-items-center justify-content-center">
-                                    <div class="col-auto personality-node egen-female">에겐녀</div>
+                                    <div class="col-auto personality-node egen-female advanced-hover">에겐녀</div>
                                     <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
-                                    <div class="col-auto personality-node egen-male">에겐남</div>
+                                    <div class="col-auto personality-node egen-male advanced-hover">에겐남</div>
                                     <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
-                                    <div class="col-auto personality-node teto-female">테토녀</div>
+                                    <div class="col-auto personality-node teto-female advanced-hover">테토녀</div>
                                     <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
-                                    <div class="col-auto personality-node teto-male">테토남</div>
+                                    <div class="col-auto personality-node teto-male advanced-hover">테토남</div>
                                     <div class="col-auto"><i class="fas fa-arrow-right arrow-animated"></i></div>
-                                    <div class="col-auto personality-node egen-female">에겐녀</div>
+                                    <div class="col-auto personality-node egen-female advanced-hover">에겐녀</div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="personality-types row mb-4 animate__animated animate__fadeIn animate__delay-2s">
-                            <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card teto-male" data-personality="teto-male">
-                                    <div class="icon-container"><i class="fas fa-mars"></i></div>
-                                    <h5>테토남</h5>
-                                    <p class="small">논리적, 도전적</p>
-                                    <div class="personality-preview">
-                                        <span class="preview-text">자세히 보기</span>
-                                        <i class="fas fa-info-circle"></i>
+                        <!-- Modern Personality Types Grid -->
+                        <div class="personality-types-modern row mb-5 animate-fade-in delay-500">
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="modern-personality-card teto-male-modern" data-personality="teto-male">
+                                    <div class="card-background"></div>
+                                    <div class="card-content">
+                                        <div class="icon-container-modern">
+                                            <i class="fas fa-mars"></i>
+                                            <div class="icon-glow"></div>
+                                        </div>
+                                        <h5 class="card-title-modern">테토남</h5>
+                                        <p class="card-description">논리적, 도전적</p>
+                                        <div class="card-traits">
+                                            <span class="trait-badge">리더십</span>
+                                            <span class="trait-badge">분석력</span>
+                                        </div>
+                                        <div class="card-hover-content">
+                                            <span class="hover-text">자세히 알아보기</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
                                     </div>
+                                    <div class="card-shine"></div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card teto-female" data-personality="teto-female">
-                                    <div class="icon-container"><i class="fas fa-venus"></i></div>
-                                    <h5>테토녀</h5>
-                                    <p class="small">활발함, 직설적</p>
-                                    <div class="personality-preview">
-                                        <span class="preview-text">자세히 보기</span>
-                                        <i class="fas fa-info-circle"></i>
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="modern-personality-card teto-female-modern" data-personality="teto-female">
+                                    <div class="card-background"></div>
+                                    <div class="card-content">
+                                        <div class="icon-container-modern">
+                                            <i class="fas fa-venus"></i>
+                                            <div class="icon-glow"></div>
+                                        </div>
+                                        <h5 class="card-title-modern">테토녀</h5>
+                                        <p class="card-description">활발함, 직설적</p>
+                                        <div class="card-traits">
+                                            <span class="trait-badge">사교성</span>
+                                            <span class="trait-badge">열정적</span>
+                                        </div>
+                                        <div class="card-hover-content">
+                                            <span class="hover-text">자세히 알아보기</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
                                     </div>
+                                    <div class="card-shine"></div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card egen-male" data-personality="egen-male">
-                                    <div class="icon-container"><i class="fas fa-mars"></i></div>
-                                    <h5>에겐남</h5>
-                                    <p class="small">섬세함, 공감능력</p>
-                                    <div class="personality-preview">
-                                        <span class="preview-text">자세히 보기</span>
-                                        <i class="fas fa-info-circle"></i>
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="modern-personality-card egen-male-modern" data-personality="egen-male">
+                                    <div class="card-background"></div>
+                                    <div class="card-content">
+                                        <div class="icon-container-modern">
+                                            <i class="fas fa-mars"></i>
+                                            <div class="icon-glow"></div>
+                                        </div>
+                                        <h5 class="card-title-modern">에겐남</h5>
+                                        <p class="card-description">섬세함, 공감능력</p>
+                                        <div class="card-traits">
+                                            <span class="trait-badge">예술성</span>
+                                            <span class="trait-badge">배려심</span>
+                                        </div>
+                                        <div class="card-hover-content">
+                                            <span class="hover-text">자세히 알아보기</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
                                     </div>
+                                    <div class="card-shine"></div>
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
-                                <div class="personality-type-card egen-female" data-personality="egen-female">
-                                    <div class="icon-container"><i class="fas fa-venus"></i></div>
-                                    <h5>에겐녀</h5>
-                                    <p class="small">차분함, 감수성</p>
-                                    <div class="personality-preview">
-                                        <span class="preview-text">자세히 보기</span>
-                                        <i class="fas fa-info-circle"></i>
+                            <div class="col-6 col-md-3 mb-4">
+                                <div class="modern-personality-card egen-female-modern" data-personality="egen-female">
+                                    <div class="card-background"></div>
+                                    <div class="card-content">
+                                        <div class="icon-container-modern">
+                                            <i class="fas fa-venus"></i>
+                                            <div class="icon-glow"></div>
+                                        </div>
+                                        <h5 class="card-title-modern">에겐녀</h5>
+                                        <p class="card-description">차분함, 감수성</p>
+                                        <div class="card-traits">
+                                            <span class="trait-badge">직관력</span>
+                                            <span class="trait-badge">평화적</span>
+                                        </div>
+                                        <div class="card-hover-content">
+                                            <span class="hover-text">자세히 알아보기</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
                                     </div>
+                                    <div class="card-shine"></div>
                                 </div>
                             </div>
                         </div>
@@ -161,22 +215,22 @@
                             <div class="btn-shine"></div>
                         </button>
                         
-                        <div class="test-info mb-5 animate__animated animate__fadeIn animate__delay-2s">
+                        <div class="test-info mb-5 animate-on-scroll">
                             <div class="row text-center">
                                 <div class="col-4">
-                                    <div class="test-info-item">
+                                    <div class="test-info-item stagger-animation advanced-hover">
                                         <i class="fas fa-clock fa-2x mb-2"></i>
                                         <p>소요시간<br>약 3분</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="test-info-item">
+                                    <div class="test-info-item stagger-animation advanced-hover">
                                         <i class="fas fa-question-circle fa-2x mb-2"></i>
                                         <p>문항수<br>10개</p>
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    <div class="test-info-item">
+                                    <div class="test-info-item stagger-animation advanced-hover">
                                         <i class="fas fa-camera fa-2x mb-2"></i>
                                         <p>사진 업로드<br>선택사항</p>
                                     </div>
@@ -347,6 +401,10 @@
     <script src="assets/js/language-dropdown.js"></script>
     <!-- Landing Page Interactions -->
     <script src="assets/js/landing-interactions.js"></script>
+    <!-- Advanced Animations System -->
+    <script src="assets/js/advanced-animations.js"></script>
+    <!-- Mobile Touch Handler -->
+    <script src="assets/js/mobile-touch-handler.js"></script>
     
     <!-- Main App (AI 기능 제거 버전) -->
     <script src="assets/js/app-modified.js"></script>

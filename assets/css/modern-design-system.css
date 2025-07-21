@@ -573,8 +573,526 @@
         opacity: 0.5;
     }
     
-    .shape-1 { width: 80px; height: 80px; }
-    .shape-2 { width: 60px; height: 60px; }
-    .shape-3 { width: 40px; height: 40px; }
-    .shape-4 { width: 70px; height: 70px; }
+         .shape-1 { width: 80px; height: 80px; }
+     .shape-2 { width: 60px; height: 60px; }
+     .shape-3 { width: 40px; height: 40px; }
+     .shape-4 { width: 70px; height: 70px; }
+ }
+
+/* ==========================================
+   🎴 MODERN PERSONALITY CARDS
+   ========================================== */
+
+.personality-types-modern {
+    margin: var(--space-3xl) 0;
+    perspective: 1000px;
+}
+
+.modern-personality-card {
+    position: relative;
+    height: 280px;
+    border-radius: var(--radius-2xl);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: var(--transition-slow);
+    overflow: hidden;
+}
+
+.modern-personality-card:hover {
+    transform: translateY(-10px) rotateY(5deg) rotateX(5deg) scale(1.02);
+}
+
+/* Card Background Gradients */
+.card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--radius-2xl);
+    opacity: 0.9;
+    transition: var(--transition-normal);
+}
+
+.teto-male-modern .card-background {
+    background: var(--teto-male-gradient);
+}
+
+.teto-female-modern .card-background {
+    background: var(--teto-female-gradient);
+}
+
+.egen-male-modern .card-background {
+    background: var(--egen-male-gradient);
+}
+
+.egen-female-modern .card-background {
+    background: var(--egen-female-gradient);
+}
+
+.modern-personality-card:hover .card-background {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: var(--space-lg);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-2xl);
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.modern-personality-card:hover .card-content {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Icon Container Modern */
+.icon-container-modern {
+    position: relative;
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    color: var(--text-white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-normal);
+}
+
+.icon-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.modern-personality-card:hover .icon-glow {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.modern-personality-card:hover .icon-container-modern {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Card Title Modern */
+.card-title-modern {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-description {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-md);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Trait Badges */
+.card-traits {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.trait-badge {
+    padding: var(--space-xs) var(--space-sm);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--text-white);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-normal);
+}
+
+.modern-personality-card:hover .trait-badge {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Card Hover Content */
+.card-hover-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition-normal);
+    color: var(--text-white);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.modern-personality-card:hover .card-hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-hover-content i {
+    transition: var(--transition-normal);
+}
+
+.modern-personality-card:hover .card-hover-content i {
+    transform: translateX(5px);
+}
+
+/* Card Shine Effect */
+.card-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%) rotate(45deg);
+    transition: transform 0.8s;
+    pointer-events: none;
+}
+
+.modern-personality-card:hover .card-shine {
+    transform: translateX(100%) rotate(45deg);
+}
+
+/* Card Active State */
+.modern-personality-card:active {
+    transform: translateY(-8px) rotateY(3deg) rotateX(3deg) scale(0.98);
+}
+
+/* Card Click Animation */
+.modern-personality-card.card-clicked {
+    animation: cardPulse 0.3s ease-out;
+}
+
+@keyframes cardPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+        box-shadow: var(--shadow-2xl);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Staggered Animation for Cards */
+.modern-personality-card:nth-child(1) { animation-delay: 0.1s; }
+.modern-personality-card:nth-child(2) { animation-delay: 0.2s; }
+.modern-personality-card:nth-child(3) { animation-delay: 0.3s; }
+.modern-personality-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Mobile Responsive Cards */
+@media (max-width: 768px) {
+    .modern-personality-card {
+        height: 240px;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .modern-personality-card:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+    
+    .card-content {
+        padding: var(--space-md);
+    }
+    
+    .icon-container-modern {
+        font-size: 2rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .card-title-modern {
+        font-size: var(--font-size-lg);
+    }
+    
+    .card-description {
+        font-size: var(--font-size-xs);
+        margin-bottom: var(--space-sm);
+    }
+    
+    .trait-badge {
+        font-size: 0.65rem;
+        padding: 2px var(--space-xs);
+    }
+}
+
+@media (max-width: 576px) {
+    .personality-types-modern .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: var(--space-md);
+    }
+    
+         .modern-personality-card {
+         height: 200px;
+         max-width: 300px;
+         margin: 0 auto var(--space-md);
+     }
+ }
+
+/* ==========================================
+   🎭 ADVANCED ANIMATIONS & INTERACTIONS
+   ========================================== */
+
+/* IntersectionObserver 애니메이션 */
+.animate-in {
+    animation: slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 리플 효과 */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    animation: ripple 0.6s ease-out;
+    z-index: 10;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* 아이콘 바운스 애니메이션 */
+@keyframes iconBounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    40% {
+        transform: translateY(-8px) scale(1.1);
+    }
+    60% {
+        transform: translateY(-4px) scale(1.05);
+    }
+}
+
+/* 카드 펄스 애니메이션 */
+.card-pulse {
+    animation: cardPulse 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes cardPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: var(--shadow-lg);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: var(--shadow-2xl);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+/* 마우스 팔로우 효과를 위한 CSS 변수 */
+.btn-modern,
+.btn-hero {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-modern::after,
+.btn-hero::after {
+    content: '';
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    pointer-events: none;
+}
+
+.btn-modern:hover::after,
+.btn-hero:hover::after {
+    width: 100px;
+    height: 100px;
+}
+
+/* 스크롤 기반 패럴랙스 효과 */
+.parallax-element {
+    will-change: transform;
+}
+
+/* 부드러운 전환을 위한 클래스 */
+.smooth-transition {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 스크롤 애니메이션을 위한 초기 상태 */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 고급 호버 효과 */
+.advanced-hover {
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.advanced-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.advanced-hover:hover::before {
+    opacity: 1;
+}
+
+/* 스태거드 애니메이션 */
+.stagger-animation {
+    animation-fill-mode: both;
+}
+
+.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+
+/* 로딩 상태 애니메이션 */
+.loading-shimmer {
+    background: linear-gradient(90deg, 
+        transparent 25%, 
+        rgba(255,255,255,0.1) 50%, 
+        transparent 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* 부드러운 등장 애니메이션 */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 스케일 애니메이션 */
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scaleIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 회전 애니메이션 */
+.rotate-in {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+    animation: rotateIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes rotateIn {
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+/* GPU 가속을 위한 최적화 */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* 성능 최적화를 위한 contain 속성 */
+.animation-container {
+    contain: layout style paint;
 } 

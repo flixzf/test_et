@@ -1,0 +1,422 @@
+/**
+ * Mobile Optimized Styles for Teto-Egen Personality Test
+ * Focus: Touch interactions, Performance, Battery efficiency
+ */
+
+/* ==========================================
+   📱 MOBILE FOUNDATION & TOUCH OPTIMIZATION
+   ========================================== */
+
+/* 터치 기기 감지 및 기본 설정 */
+@media (pointer: coarse) and (hover: none) {
+    /* 터치 기기에서만 적용되는 스타일 */
+    
+    /* 터치 영역 최적화 */
+    .modern-personality-card,
+    .btn-modern,
+    .btn-hero,
+    .personality-node,
+    .advanced-hover {
+        min-height: 44px; /* Apple의 권장 터치 영역 */
+        min-width: 44px;
+        touch-action: manipulation; /* 더블탭 줌 방지 */
+    }
+
+    /* 호버 효과 제거 (터치에서는 의미 없음) */
+    .modern-personality-card:hover,
+    .advanced-hover:hover,
+    .btn-modern:hover,
+    .btn-hero:hover {
+        transform: none;
+        transition: none;
+    }
+
+    /* 터치 피드백으로 대체 */
+    .modern-personality-card:active,
+    .advanced-hover:active,
+    .btn-modern:active,
+    .btn-hero:active {
+        transform: scale(0.95);
+        opacity: 0.8;
+        transition: all 0.1s ease;
+    }
+}
+
+/* ==========================================
+   🔋 PERFORMANCE OPTIMIZATIONS FOR MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+    /* 모바일에서 애니메이션 간소화 */
+    
+    /* 복잡한 3D 효과 제거 */
+    .modern-personality-card {
+        transform: none !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .modern-personality-card:active {
+        transform: scale(0.98);
+        box-shadow: var(--shadow-md);
+    }
+
+    /* 배경 패럴랙스 효과 감소 (배터리 절약) */
+    .shape {
+        animation-duration: 12s; /* 기존 6s에서 12s로 느리게 */
+        will-change: auto; /* GPU 레이어 최소화 */
+    }
+
+    /* 블러 효과 최적화 */
+    .glass-card {
+        backdrop-filter: blur(5px); /* 기존 10px에서 5px로 감소 */
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    /* 그라데이션 간소화 */
+    .hero-background {
+        background: var(--brand-primary); /* 단색으로 대체 */
+    }
+}
+
+/* ==========================================
+   📐 MOBILE LAYOUT OPTIMIZATIONS
+   ========================================== */
+
+@media (max-width: 576px) {
+    /* 초소형 화면 최적화 */
+    
+    /* 히어로 섹션 */
+    .hero-container {
+        padding-top: var(--space-xl);
+        padding-bottom: var(--space-xl);
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: var(--space-md);
+    }
+
+    /* 타이핑 컨테이너 */
+    .identity-questions-modern {
+        margin: var(--space-md) auto var(--space-lg);
+        padding: var(--space-sm);
+    }
+
+    .modern-typing {
+        font-size: var(--font-size-base);
+    }
+
+    /* 이미지 최적화 */
+    .main-image-modern {
+        max-width: 280px;
+        margin: var(--space-lg) auto;
+    }
+
+    /* 카드 레이아웃 */
+    .personality-types-modern .row {
+        gap: var(--space-sm);
+    }
+
+    .modern-personality-card {
+        height: 180px;
+        margin-bottom: var(--space-sm);
+        border-radius: var(--radius-lg); /* 작은 radius로 변경 */
+    }
+
+    .card-content {
+        padding: var(--space-sm);
+    }
+
+    .card-title-modern {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--space-xs);
+    }
+
+    .card-description {
+        font-size: var(--font-size-xs);
+        margin-bottom: var(--space-xs);
+    }
+
+    .trait-badge {
+        font-size: 0.6rem;
+        padding: 2px 6px;
+    }
+
+    /* 버튼 최적화 */
+    .btn-hero {
+        font-size: var(--font-size-sm);
+        padding: var(--space-sm) var(--space-lg);
+        margin: var(--space-lg) 0;
+    }
+
+    /* 테스트 정보 */
+    .test-info-item {
+        padding: var(--space-sm);
+    }
+
+    .test-info-item i {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-xs);
+    }
+
+    .test-info-item p {
+        font-size: var(--font-size-xs);
+        line-height: 1.3;
+    }
+}
+
+/* ==========================================
+   👆 ENHANCED TOUCH INTERACTIONS
+   ========================================== */
+
+/* 터치 피드백 시스템 */
+.touch-feedback {
+    position: relative;
+    overflow: hidden;
+}
+
+.touch-feedback::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.touch-feedback:active::after {
+    width: 100px;
+    height: 100px;
+    transition: all 0.1s ease;
+}
+
+/* 스와이프 영역 최적화 */
+.swipe-area {
+    touch-action: pan-x pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 터치 스크롤 최적화 */
+.smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* ==========================================
+   🔍 MOBILE VIEWPORT OPTIMIZATIONS
+   ========================================== */
+
+@media (max-width: 480px) {
+    /* 매우 작은 화면 (아이폰 SE 등) */
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .personality-types-modern {
+        margin: var(--space-lg) 0;
+    }
+
+    /* 1열 레이아웃 강제 */
+    .personality-types-modern .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: var(--space-sm);
+    }
+
+    .modern-personality-card {
+        max-width: 100%;
+        height: 160px;
+    }
+
+    /* 텍스트 크기 조정 */
+    .card-title-modern {
+        font-size: var(--font-size-sm);
+    }
+
+    .card-description {
+        font-size: 0.7rem;
+    }
+
+    /* 간격 최적화 */
+    .hero-container {
+        padding-left: var(--space-sm);
+        padding-right: var(--space-sm);
+    }
+}
+
+/* ==========================================
+   🌍 LANDSCAPE MOBILE OPTIMIZATIONS
+   ========================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    /* 모바일 가로 모드 최적화 */
+    
+    .hero-container {
+        padding-top: var(--space-md);
+        padding-bottom: var(--space-md);
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .identity-questions-modern {
+        margin: var(--space-sm) auto var(--space-md);
+    }
+
+    .main-image-modern {
+        max-width: 300px;
+        margin: var(--space-md) auto;
+    }
+
+    /* 카드를 2x2 그리드로 */
+    .personality-types-modern .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .modern-personality-card {
+        height: 200px;
+    }
+}
+
+/* ==========================================
+   ⚡ MOBILE PERFORMANCE ENHANCEMENTS
+   ========================================== */
+
+/* 모바일에서 불필요한 애니메이션 제거 */
+@media (prefers-reduced-motion: reduce) {
+    .shape,
+    .animate-fade-in,
+    .animate-slide-up,
+    .animate-scale-in,
+    .floating-shapes * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .modern-personality-card {
+        transform: none !important;
+    }
+}
+
+/* 저전력 모드 감지 및 최적화 */
+@media (prefers-reduced-motion: reduce) {
+    .parallax-element {
+        will-change: auto;
+        transform: none !important;
+    }
+
+    .gpu-accelerated {
+        transform: none;
+        will-change: auto;
+    }
+}
+
+/* ==========================================
+   🎯 ACCESSIBILITY FOR MOBILE
+   ========================================== */
+
+/* 고대비 모드 지원 */
+@media (prefers-contrast: high) {
+    .glass-card {
+        background: rgba(255, 255, 255, 0.9);
+        border: 2px solid var(--text-primary);
+    }
+
+    .modern-personality-card {
+        border: 2px solid var(--text-white);
+    }
+
+    .trait-badge {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--text-primary);
+        border: 1px solid var(--text-primary);
+    }
+}
+
+/* 큰 텍스트 모드 지원 */
+@media (min-resolution: 2dppx) {
+    /* 레티나 디스플레이 최적화 */
+    .hero-title::after {
+        height: 2px; /* 더 선명한 언더라인 */
+    }
+
+    .trait-badge {
+        font-weight: 600; /* 더 굵은 텍스트 */
+    }
+}
+
+/* ==========================================
+   📊 MOBILE LOADING OPTIMIZATIONS
+   ========================================== */
+
+/* 모바일에서 이미지 로딩 최적화 */
+@media (max-width: 768px) {
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* 백그라운드 이미지 최적화 */
+    .card-background {
+        background-attachment: scroll; /* 고정 배경 제거로 성능 향상 */
+    }
+}
+
+/* 느린 네트워크 대응 */
+@media (max-width: 576px) {
+    /* 로딩 스켈레톤 */
+    .loading-skeleton {
+        background: var(--loading-shimmer);
+        min-height: 160px;
+        border-radius: var(--radius-lg);
+        margin-bottom: var(--space-sm);
+    }
+
+    /* 점진적 향상 */
+    .enhanced-feature {
+        display: none; /* 기본적으로 숨김 */
+    }
+
+    .js-loaded .enhanced-feature {
+        display: block; /* JavaScript 로드 후 표시 */
+    }
+}
+
+/* ==========================================
+   🎨 MOBILE DARK MODE SUPPORT
+   ========================================== */
+
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    /* 모바일 다크 모드 최적화 */
+    
+    .glass-card {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-white);
+    }
+
+    .hero-background {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+
+    .card-title-modern,
+    .card-description {
+        color: var(--text-white);
+    }
+
+    .btn-hero {
+        background: var(--gradient-primary);
+        color: var(--text-white);
+    }
+} 

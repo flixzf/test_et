@@ -17,9 +17,15 @@ $(document).ready(function() {
  * Initialize personality type card interactions
  */
 function initPersonalityCards() {
-    // Click event for personality type cards
-    $('.personality-type-card').on('click', function() {
+    // Click event for modern personality type cards
+    $('.modern-personality-card').on('click', function() {
         const personalityType = $(this).data('personality');
+        
+        // Add click animation
+        $(this).addClass('card-clicked');
+        setTimeout(() => {
+            $(this).removeClass('card-clicked');
+        }, 200);
         
         // Show the info modal
         $('#infoModal').modal('show');
@@ -225,8 +231,8 @@ $(document).ready(function() {
         if (className) {
             const personalityType = className;
             
-            // Find the corresponding personality card and trigger its click event
-            $(`.personality-type-card[data-personality="${personalityType}"]`).click();
+            // Find the corresponding modern personality card and trigger its click event
+            $(`.modern-personality-card[data-personality="${personalityType}"]`).click();
         }
     });
 });
