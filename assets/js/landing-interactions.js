@@ -145,15 +145,20 @@ function addTypingAnimation() {
      * @param {number} index - 현재 글자 인덱스
      */
     function typeText(text, element, index = 0) {
-        if (!isAnimating) return; // 애니메이션이 중단되었으면 종료
-        
-        if (index < text.length) {
-            // 한 글자씩 추가
-            element.text(element.text() + text.charAt(index));
-            setTimeout(() => typeText(text, element, index + 1), config.typeSpeed);
-        } else {
-            // 타이핑 완료 후 대기
-            setTimeout(() => eraseText(element), config.displayTime);
+        try {
+            if (!isAnimating || !element || !element.length) return; // 애니메이션이 중단되었으면 종료
+            
+            if (index < text.length) {
+                // 한 글자씩 추가
+                element.text(element.text() + text.charAt(index));
+                setTimeout(() => typeText(text, element, index + 1), config.typeSpeed);
+            } else {
+                // 타이핑 완료 후 대기
+                setTimeout(() => eraseText(element), config.displayTime);
+            }
+        } catch (error) {
+            console.warn('Type text error:', error);
+            isAnimating = false;
         }
     }
     
@@ -162,21 +167,26 @@ function addTypingAnimation() {
      * @param {jQuery} element - 대상 요소
      */
     function eraseText(element) {
-        if (!isAnimating) return; // 애니메이션이 중단되었으면 종료
-        
-        const text = element.text();
-        if (text.length > 0) {
-            // 뒤에서부터 한 글자씩 제거
-            element.text(text.substring(0, text.length - 1));
-            setTimeout(() => eraseText(element), config.eraseSpeed);
-        } else {
-            // 다음 텍스트로 순환
-            currentIndex = (currentIndex + 1) % texts.length;
-            setTimeout(() => {
-                if (isAnimating) {
-                    typeText(texts[currentIndex], element);
-                }
-            }, config.switchDelay);
+        try {
+            if (!isAnimating || !element || !element.length) return; // 애니메이션이 중단되었으면 종료
+            
+            const text = element.text();
+            if (text.length > 0) {
+                // 뒤에서부터 한 글자씩 제거
+                element.text(text.substring(0, text.length - 1));
+                setTimeout(() => eraseText(element), config.eraseSpeed);
+            } else {
+                // 다음 텍스트로 순환
+                currentIndex = (currentIndex + 1) % texts.length;
+                setTimeout(() => {
+                    if (isAnimating) {
+                        typeText(texts[currentIndex], element);
+                    }
+                }, config.switchDelay);
+            }
+        } catch (error) {
+            console.warn('Erase text error:', error);
+            isAnimating = false;
         }
     }
     
@@ -184,10 +194,14 @@ function addTypingAnimation() {
      * 애니메이션 시작
      */
     function startAnimation() {
-        if (typingElement.length && texts.length > 0) {
-            isAnimating = true;
-            typingElement.text(''); // 초기화
-            typeText(texts[currentIndex], typingElement);
+        try {
+            if (typingElement && typingElement.length && texts.length > 0) {
+                isAnimating = true;
+                typingElement.text(''); // 초기화
+                typeText(texts[currentIndex], typingElement);
+            }
+        } catch (error) {
+            console.warn('Typing animation start failed:', error);
         }
     }
     
@@ -222,17 +236,25 @@ function addTypingAnimation() {
  * Initialize typing animation when document is ready
  */
 $(document).ready(function() {
-    // Start typing animation
-    addTypingAnimation();
-    
-    // Add click events to personality nodes in food chain
-    $('.personality-node').on('click', function() {
-        const className = $(this).attr('class').split(' ').find(cls => cls.includes('-'));
-        if (className) {
-            const personalityType = className;
-            
-            // Find the corresponding modern personality card and trigger its click event
-            $(`.modern-personality-card[data-personality="${personalityType}"]`).click();
-        }
-    });
+    try {
+        // Start typing animation
+        addTypingAnimation();
+        
+        // Add click events to personality nodes in food chain
+        $('.personality-node').on('click', function() {
+            try {
+                const className = $(this).attr('class').split(' ').find(cls => cls.includes('-'));
+                if (className) {
+                    const personalityType = className;
+                    
+                    // Find the corresponding modern personality card and trigger its click event
+                    $(`.modern-personality-card[data-personality="${personalityType}"]`).click();
+                }
+            } catch (error) {
+                console.warn('Personality node click error:', error);
+            }
+        });
+    } catch (error) {
+        console.error('Landing interactions initialization failed:', error);
+    }
 });
