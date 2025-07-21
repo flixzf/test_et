@@ -28,10 +28,10 @@ const languageTranslator = (function() {
         // Use the language loader to get translations
         return window.languageLoader.getTranslations(langCode)
             .then(data => {
-                // Store translations
                 translations = data;
-                currentLanguageCode = langCode;
-                console.log(`Translations set for ${langCode}`);
+                // Use lang from data if provided (fallback cases)
+                currentLanguageCode = data.__langCode || langCode;
+                console.log(`Translations set for ${currentLanguageCode}`);
                 return translations;
             });
     }
@@ -416,7 +416,12 @@ const languageTranslator = (function() {
                     // Manage cache size after language change
                     manageTranslationCacheSize();
                     
-                    resolve(language);
+                    if (currentLanguageCode !== language.code) {
+                        window.languageUtils.setCurrentLanguage(currentLanguageCode);
+                        language = window.languageUtils.getCurrentLanguage();
+                    }
+                     
+                     resolve(language);
                 })
                 .catch(reject);
         });

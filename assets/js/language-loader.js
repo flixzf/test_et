@@ -241,6 +241,8 @@ const languageLoader = (function() {
                     return response.json();
                 })
                 .then(data => {
+                    // Attach language code to data
+                    data.__langCode = langCode;
                     // Store translations in cache
                     addToCache(langCode, data);
                     console.log(`Translations loaded for ${langCode}`);

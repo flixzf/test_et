@@ -1155,3 +1155,8 @@
 .animation-container {
     contain: layout style paint;
 } 
+
+.hero-title,
+.modern-typing {
+    font-family: "Noto Sans", "Noto Sans KR", "Noto Sans JP", "Noto Sans Bengali", "Helvetica", "Arial", sans-serif;
+} 
