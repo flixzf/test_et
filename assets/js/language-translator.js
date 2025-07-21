@@ -289,7 +289,7 @@ const languageTranslator = (function() {
         const path = [];
         let currentElement = element;
         
-        while (currentElement && currentElement !== document.body) {
+        while (currentElement && currentElement !== document.body && currentElement.tagName) {
             let selector = currentElement.tagName.toLowerCase();
             
             if (currentElement.id) {
