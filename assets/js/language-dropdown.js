@@ -17,7 +17,7 @@ const languageDropdown = (function () {
         let html = `
             <div class="language-dropdown dropdown">
                 <button class="btn btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="assets/images/flags/${currentLanguage.flag}.svg" alt="${currentLanguage.name} Flag" class="flag-icon">
+                    <span class="flag-emoji">${currentLanguage.flag}</span>
                     <span class="language-name">${currentLanguage.nativeName}</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
@@ -29,7 +29,7 @@ const languageDropdown = (function () {
             html += `
                 <li>
                     <a class="dropdown-item ${isActive ? 'active' : ''}" href="#" data-language="${language.code}">
-                        <img src="assets/images/flags/${language.flag}.svg" alt="${language.name} Flag" class="flag-icon">
+                        <span class="flag-emoji">${language.flag}</span>
                         <span>${language.nativeName}</span>
                     </a>
                 </li>
@@ -137,17 +137,17 @@ const languageDropdown = (function () {
                 color: #0d6efd;
             }
             
-            .language-dropdown .flag-icon {
+            .language-dropdown .flag-emoji {
+                font-size: 20px;
+                margin-right: 8px;
+                line-height: 1;
+                display: inline-block;
+                text-align: center;
                 width: 24px;
-                height: 18px;
-                object-fit: cover;
-                border-radius: 3px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
                 transition: all 0.3s ease;
-                border: 1px solid rgba(0, 0, 0, 0.1);
             }
             
-            .language-dropdown .dropdown-item:hover .flag-icon {
+            .language-dropdown .dropdown-item:hover .flag-emoji {
                 transform: scale(1.1);
             }
             

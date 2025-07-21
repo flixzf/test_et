@@ -13,7 +13,7 @@ const languageConfig = {
       code: "en",
       name: "English",
       nativeName: "English",
-      flag: "gb",
+      flag: "🇬🇧",
       rtl: false,
       dateFormat: "MM/DD/YYYY",
       numberFormat: {
@@ -25,7 +25,7 @@ const languageConfig = {
       code: "zh",
       name: "Chinese",
       nativeName: "中文",
-      flag: "cn",
+      flag: "🇨🇳",
       rtl: false,
       dateFormat: "YYYY/MM/DD",
       numberFormat: {
@@ -37,7 +37,7 @@ const languageConfig = {
       code: "hi",
       name: "Hindi",
       nativeName: "हिन्दी",
-      flag: "in",
+      flag: "🇮🇳",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -49,7 +49,7 @@ const languageConfig = {
       code: "es",
       name: "Spanish",
       nativeName: "Español",
-      flag: "es",
+      flag: "🇪🇸",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -61,7 +61,7 @@ const languageConfig = {
       code: "fr",
       name: "French",
       nativeName: "Français",
-      flag: "fr",
+      flag: "🇫🇷",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -73,7 +73,7 @@ const languageConfig = {
       code: "ar",
       name: "Arabic",
       nativeName: "العربية",
-      flag: "sa",
+      flag: "🇸🇦",
       rtl: true,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -85,7 +85,7 @@ const languageConfig = {
       code: "bn",
       name: "Bengali",
       nativeName: "বাংলা",
-      flag: "bd",
+      flag: "🇧🇩",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -97,7 +97,7 @@ const languageConfig = {
       code: "ru",
       name: "Russian",
       nativeName: "Русский",
-      flag: "ru",
+      flag: "🇷🇺",
       rtl: false,
       dateFormat: "DD.MM.YYYY",
       numberFormat: {
@@ -109,7 +109,7 @@ const languageConfig = {
       code: "pt",
       name: "Portuguese",
       nativeName: "Português",
-      flag: "pt",
+      flag: "🇵🇹",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -121,7 +121,7 @@ const languageConfig = {
       code: "id",
       name: "Indonesian",
       nativeName: "Bahasa Indonesia",
-      flag: "id",
+      flag: "🇮🇩",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -133,7 +133,7 @@ const languageConfig = {
       code: "ur",
       name: "Urdu",
       nativeName: "اردو",
-      flag: "pk",
+      flag: "🇵🇰",
       rtl: true,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -145,7 +145,7 @@ const languageConfig = {
       code: "de",
       name: "German",
       nativeName: "Deutsch",
-      flag: "de",
+      flag: "🇩🇪",
       rtl: false,
       dateFormat: "DD.MM.YYYY",
       numberFormat: {
@@ -157,7 +157,7 @@ const languageConfig = {
       code: "ja",
       name: "Japanese",
       nativeName: "日本語",
-      flag: "jp",
+      flag: "🇯🇵",
       rtl: false,
       dateFormat: "YYYY/MM/DD",
       numberFormat: {
@@ -169,7 +169,7 @@ const languageConfig = {
       code: "sw",
       name: "Swahili",
       nativeName: "Kiswahili",
-      flag: "tz",
+      flag: "🇹🇿",
       rtl: false,
       dateFormat: "DD/MM/YYYY",
       numberFormat: {
@@ -181,7 +181,7 @@ const languageConfig = {
       code: "ko",
       name: "Korean",
       nativeName: "한국어",
-      flag: "kr",
+      flag: "🇰🇷",
       rtl: false,
       dateFormat: "YYYY.MM.DD",
       numberFormat: {

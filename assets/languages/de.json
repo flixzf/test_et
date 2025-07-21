@@ -1,0 +1,47 @@
+{
+  "app": {
+    "title": "Teto-Egen Persönlichkeitstest",
+    "description": "Entdecken Sie Ihren Teto-Egen Persönlichkeitstyp!",
+    "metaDescription": "Entdecken Sie Ihren Teto-Egen Persönlichkeitstyp!"
+  },
+  "startScreen": {
+    "mainTitle": "Nur 2 Minuten! Was ist Ihre Teto-Egen Persönlichkeit?",
+    "typingTexts": [
+      "Was für ein Mensch bin ich?",
+      "Was denken andere über mich?"
+    ],
+    "intro": "Finden Sie heraus, ob Sie ein Teto-Mann, eine Teto-Frau, ein Egen-Mann oder eine Egen-Frau sind durch Umfrage und Gesichtsanalyse!",
+    "startButton": "Test Starten",
+    "infoTitle": "Was ist der Teto-Egen Persönlichkeitstyp?",
+    "infoDescription": "Der Teto-Egen Persönlichkeitstyp ist ein Klassifizierungssystem, das Männlichkeit und Weiblichkeit basierend auf sozialen und verhaltensbezogenen Merkmalen unterscheidet.",
+    "moreInfoButton": "Mehr Erfahren",
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "Teto Mann",
+        "traits": "Logisch, Herausfordernd"
+      },
+      "tetoFemale": {
+        "title": "Teto Frau",
+        "traits": "Energisch, Direkt"
+      },
+      "egenMale": {
+        "title": "Egen Mann",
+        "traits": "Sensibel, Empathisch"
+      },
+      "egenFemale": {
+        "title": "Egen Frau",
+        "traits": "Ruhig, Emotional"
+      }
+    }
+  },
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "retry": "Wiederholen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "close": "Schließen",
+    "save": "Speichern",
+    "back": "Zurück"
+  }
+} 

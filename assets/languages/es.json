@@ -5,7 +5,11 @@
     "metaDescription": "¡Descubre tu tipo de personalidad Teto-Egen!"
   },
   "startScreen": {
-    "mainTitle": "Test de Personalidad Teto-Egen",
+    "mainTitle": "¡Solo 2 minutos! ¿Cuál es tu personalidad Teto-Egen?",
+    "typingTexts": [
+      "¿Qué tipo de persona soy?",
+      "¿Qué piensan otros de mí?"
+    ],
     "intro": "¡Descubre si eres un Hombre Teto, Mujer Teto, Hombre Egen o Mujer Egen a través de una encuesta y análisis facial!",
     "startButton": "Comenzar Test",
     "infoTitle": "¿Qué es el tipo de personalidad Teto-Egen?",

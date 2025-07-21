@@ -1,0 +1,47 @@
+{
+  "app": {
+    "title": "Mtihani wa Utu wa Teto-Egen",
+    "description": "Gundua aina ya utu wako wa Teto-Egen!",
+    "metaDescription": "Gundua aina ya utu wako wa Teto-Egen!"
+  },
+  "startScreen": {
+    "mainTitle": "Dakika 2 tu! Utu wako wa Teto-Egen ni nini?",
+    "typingTexts": [
+      "Mimi ni mtu wa namna gani?",
+      "Wengine wanafikiri nini kuhusu mimi?"
+    ],
+    "intro": "Gundua kama wewe ni Mwanaume Teto, Mwanamke Teto, Mwanaume Egen, au Mwanamke Egen kupitia utafiti na uchambuzi wa uso!",
+    "startButton": "Anza Mtihani",
+    "infoTitle": "Aina ya Utu wa Teto-Egen ni nini?",
+    "infoDescription": "Aina ya utu wa Teto-Egen ni mfumo wa uainishaji unaotofautisha kiume na kike kulingana na sifa za kijamii na kiutabia.",
+    "moreInfoButton": "Jifunze Zaidi",
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "Mwanaume Teto",
+        "traits": "Kimantiki, Changamoto"
+      },
+      "tetoFemale": {
+        "title": "Mwanamke Teto",
+        "traits": "Mwenye Nguvu, Moja kwa Moja"
+      },
+      "egenMale": {
+        "title": "Mwanaume Egen",
+        "traits": "Mwenye Hisia, Mwenye Huruma"
+      },
+      "egenFemale": {
+        "title": "Mwanamke Egen",
+        "traits": "Mtulivu, Mwenye Hisia"
+      }
+    }
+  },
+  "common": {
+    "loading": "Inapakia...",
+    "error": "Kosa",
+    "retry": "Jaribu Tena",
+    "cancel": "Ghairi",
+    "confirm": "Thibitisha",
+    "close": "Funga",
+    "save": "Hifadhi",
+    "back": "Rudi"
+  }
+} 

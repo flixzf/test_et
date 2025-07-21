@@ -141,6 +141,14 @@ const languageTranslator = (function() {
             titleKeyCache = document.documentElement.getAttribute('data-i18n-title');
         }
         
+        // Force full UI scan on language change
+        if (window.languageChangeForceUpdate) {
+            // Clear caches to ensure fresh scan
+            lastAppliedTranslations.clear();
+            elementCache.clear();
+            console.log('Forced full UI refresh due to language change');
+        }
+        
         // Elements that need updating
         const elementsToUpdate = [];
         
@@ -185,11 +193,15 @@ const languageTranslator = (function() {
             }
         });
         
-        // If no elements need updating, skip the DOM update
-        if (elementsToUpdate.length === 0) {
+        // Force update on language change even if no elements detected
+        const forceUpdate = window.languageChangeForceUpdate || false;
+        if (elementsToUpdate.length === 0 && !forceUpdate) {
             console.log('No translation updates needed');
             return;
         }
+        
+        // Reset force update flag
+        window.languageChangeForceUpdate = false;
         
         // Manage element cache size
         manageElementCacheSize();
@@ -384,6 +396,9 @@ const languageTranslator = (function() {
                     // Update language direction for RTL languages
                     document.documentElement.dir = window.languageUtils.isRTL() ? 'rtl' : 'ltr';
                     
+                    // Set force update flag for UI refresh
+                    window.languageChangeForceUpdate = true;
+                    
                     // Update language dropdown if it exists
                     updateLanguageDropdown();
                     
@@ -417,7 +432,12 @@ const languageTranslator = (function() {
             const langName = dropdown.querySelector('.language-name');
             
             if (flagImg) {
-                flagImg.src = `assets/images/flags/${currentLanguage.flag}.svg`;
+                // Use emoji instead of image
+        flagImg.textContent = currentLanguage.flag;
+        flagImg.style.fontSize = '20px';
+        flagImg.style.width = '24px';
+        flagImg.style.textAlign = 'center';
+        flagImg.style.display = 'inline-block';
                 flagImg.alt = `${currentLanguage.name} Flag`;
             }
             

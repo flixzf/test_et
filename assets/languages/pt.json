@@ -1,0 +1,47 @@
+{
+  "app": {
+    "title": "Teste de Personalidade Teto-Egen",
+    "description": "Descubra seu tipo de personalidade Teto-Egen!",
+    "metaDescription": "Descubra seu tipo de personalidade Teto-Egen!"
+  },
+  "startScreen": {
+    "mainTitle": "Apenas 2 minutos! Qual é sua personalidade Teto-Egen?",
+    "typingTexts": [
+      "Que tipo de pessoa sou?",
+      "O que os outros pensam de mim?"
+    ],
+    "intro": "Descubra se você é um Homem Teto, Mulher Teto, Homem Egen ou Mulher Egen através de pesquisa e análise facial!",
+    "startButton": "Iniciar Teste",
+    "infoTitle": "O que é o Tipo de Personalidade Teto-Egen?",
+    "infoDescription": "O tipo de personalidade Teto-Egen é um sistema de classificação que distingue masculinidade e feminilidade com base em características sociais e comportamentais.",
+    "moreInfoButton": "Saiba Mais",
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "Homem Teto",
+        "traits": "Lógico, Desafiador"
+      },
+      "tetoFemale": {
+        "title": "Mulher Teto",
+        "traits": "Energética, Direta"
+      },
+      "egenMale": {
+        "title": "Homem Egen",
+        "traits": "Sensível, Empático"
+      },
+      "egenFemale": {
+        "title": "Mulher Egen",
+        "traits": "Calma, Emocional"
+      }
+    }
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "retry": "Tentar Novamente",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Fechar",
+    "save": "Salvar",
+    "back": "Voltar"
+  }
+} 

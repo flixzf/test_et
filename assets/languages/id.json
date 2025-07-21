@@ -5,7 +5,11 @@
     "metaDescription": "Temukan tipe kepribadian Teto-Egen Anda!"
   },
   "startScreen": {
-    "mainTitle": "Tes Kepribadian Teto-Egen",
+    "mainTitle": "Hanya 2 menit! Apa kepribadian Teto-Egen Anda?",
+    "typingTexts": [
+      "Saya orang seperti apa?",
+      "Apa yang orang lain pikirkan tentang saya?"
+    ],
     "intro": "Temukan apakah Anda termasuk Teto Pria, Teto Wanita, Egen Pria, atau Egen Wanita melalui survei dan foto wajah!",
     "startButton": "Mulai Tes",
     "infoTitle": "Apa itu Tipe Kepribadian Teto-Egen?",
