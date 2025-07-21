@@ -141,7 +141,6 @@ function addTypingAnimation() {
         } catch (error) {
             console.warn('타이핑 텍스트 번역 실패:', error);
         }
-        
         // 기본값 (한국어)
         return [
             "내가 어떤 사람인지 알고 싶다면?",        
@@ -155,22 +154,18 @@ function addTypingAnimation() {
     let isAnimating = false;
     const typingElement = $('.modern-typing');
     
-    /**
-     * 텍스트를 한 글자씩 타이핑하는 함수
-     * @param {string} text - 타이핑할 텍스트
-     * @param {jQuery} element - 대상 요소
-     * @param {number} index - 현재 글자 인덱스
-     */
     function typeText(text, element, index = 0) {
         try {
-            if (!isAnimating || !element || !element.length) return; // 애니메이션이 중단되었으면 종료
-            
+            if (!isAnimating || !element || !element.length) return;
+            if (typeof text !== 'string') {
+                console.warn('타이핑 텍스트가 문자열이 아님:', text);
+                isAnimating = false;
+                return;
+            }
             if (index < text.length) {
-                // 한 글자씩 추가
                 element.text(element.text() + text.charAt(index));
                 setTimeout(() => typeText(text, element, index + 1), config.typeSpeed);
             } else {
-                // 타이핑 완료 후 대기
                 setTimeout(() => eraseText(element), config.displayTime);
             }
         } catch (error) {
@@ -179,24 +174,25 @@ function addTypingAnimation() {
         }
     }
     
-    /**
-     * 텍스트를 한 글자씩 지우는 함수
-     * @param {jQuery} element - 대상 요소
-     */
     function eraseText(element) {
         try {
-            if (!isAnimating || !element || !element.length) return; // 애니메이션이 중단되었으면 종료
-            
+            if (!isAnimating || !element || !element.length) return;
             const text = element.text();
+            if (typeof text !== 'string') {
+                console.warn('지울 텍스트가 문자열이 아님:', text);
+                isAnimating = false;
+                return;
+            }
             if (text.length > 0) {
-                // 뒤에서부터 한 글자씩 제거
                 element.text(text.substring(0, text.length - 1));
                 setTimeout(() => eraseText(element), config.eraseSpeed);
             } else {
-                // 다음 텍스트로 순환
-                currentIndex = (currentIndex + 1) % texts.length;
+                currentIndex = 0;
+                if (Array.isArray(texts) && texts.length > 0) {
+                    currentIndex = (currentIndex + 1) % texts.length;
+                }
                 setTimeout(() => {
-                    if (isAnimating) {
+                    if (isAnimating && Array.isArray(texts) && typeof texts[currentIndex] === 'string') {
                         typeText(texts[currentIndex], element);
                     }
                 }, config.switchDelay);
@@ -207,31 +203,6 @@ function addTypingAnimation() {
         }
     }
     
-    /**
-     * 애니메이션 시작
-     */
-    function startAnimation() {
-        try {
-            if (typingElement && typingElement.length && texts.length > 0) {
-                isAnimating = true;
-                typingElement.text(''); // 초기화
-                typeText(texts[currentIndex], typingElement);
-            }
-        } catch (error) {
-            console.warn('Typing animation start failed:', error);
-        }
-    }
-    
-    /**
-     * 애니메이션 중지
-     */
-    function stopAnimation() {
-        isAnimating = false;
-    }
-    
-    /**
-     * 언어 변경 시 타이핑 텍스트 업데이트
-     */
     function updateTypingTexts() {
         stopAnimation();
         texts = getTypingTexts();
