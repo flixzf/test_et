@@ -150,6 +150,9 @@ const languageTranslator = (function() {
             lastAppliedTranslations.clear();
             elementCache.clear();
             console.log('Forced full UI refresh due to language change');
+            // Rebuild elements cache to include any new DOM nodes
+            translationElementsCache = document.querySelectorAll('[data-i18n]');
+            titleKeyCache = document.documentElement.getAttribute('data-i18n-title');
         }
         
         // Elements that need updating

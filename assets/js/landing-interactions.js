@@ -213,6 +213,24 @@ function addTypingAnimation() {
     // 언어 변경 이벤트 리스너 (전역으로 노출)
     window.updateTypingAnimation = updateTypingTexts;
     
+    // --- 애니메이션 컨트롤 함수들 ---
+    function startAnimation() {
+        try {
+            if (!typingElement || !typingElement.length) return;
+            if (!Array.isArray(texts) || texts.length === 0) return;
+            isAnimating = true;
+            typingElement.text(''); // 초기화
+            typeText(texts[currentIndex], typingElement);
+        } catch (err) {
+            console.warn('startAnimation error:', err);
+            isAnimating = false;
+        }
+    }
+
+    function stopAnimation() {
+        isAnimating = false;
+    }
+    
     // 애니메이션 시작
     startAnimation();
     
