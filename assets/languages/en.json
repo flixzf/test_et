@@ -5,7 +5,11 @@
     "metaDescription": "Discover your Teto-Egen personality type!"
   },
   "startScreen": {
-    "mainTitle": "Teto-Egen Personality Test",
+    "mainTitle": "Only 2 minutes! What's your Teto-Egen personality?",
+    "typingTexts": [
+      "What kind of person am I?",
+      "What do others think of me?"
+    ],
     "intro": "Find out if you're a Teto Man, Teto Woman, Egen Man, or Egen Woman through a survey and facial analysis!",
     "startButton": "Start Test",
     "infoTitle": "What is the Teto-Egen Personality Type?",

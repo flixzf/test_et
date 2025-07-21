@@ -1,0 +1,64 @@
+{
+  "app": {
+    "title": "اختبار شخصية تيتو-إيجن",
+    "description": "اكتشف نوع شخصيتك تيتو-إيجن!",
+    "metaDescription": "اكتشف نوع شخصيتك تيتو-إيجن!"
+  },
+  "startScreen": {
+    "mainTitle": "اختبار شخصية تيتو-إيجن",
+    "intro": "اكتشف ما إذا كنت رجل تيتو أو امرأة تيتو أو رجل إيجن أو امرأة إيجن من خلال الاستطلاع وتحليل الوجه!",
+    "startButton": "ابدأ الاختبار",
+    "infoTitle": "ما هو نوع شخصية تيتو-إيجن؟",
+    "infoDescription": "نوع شخصية تيتو-إيجن هو نظام تصنيف يميز الذكورة والأنوثة بناءً على الخصائص الاجتماعية والسلوكية.",
+    "moreInfoButton": "اعرف المزيد",
+    "foodChainTitle": "سلسلة طعام المواعدة",
+    "testInfo": {
+      "timeRequired": "الوقت المطلوب",
+      "timeValue": "حوالي 3 دقائق",
+      "questionCount": "الأسئلة",
+      "questionValue": "10",
+      "photoUpload": "رفع الصور",
+      "photoValue": "اختياري"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "رجل تيتو",
+        "traits": "منطقي، متحدي"
+      },
+      "tetoFemale": {
+        "title": "امرأة تيتو",
+        "traits": "نشيطة، مباشرة"
+      },
+      "egenMale": {
+        "title": "رجل إيجن",
+        "traits": "حساس، متعاطف"
+      },
+      "egenFemale": {
+        "title": "امرأة إيجن",
+        "traits": "هادئة، عاطفية"
+      }
+    }
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "retry": "إعادة المحاولة",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "close": "إغلاق",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تحرير",
+    "view": "عرض",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "refresh": "تحديث",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "reset": "إعادة تعيين",
+    "clear": "مسح"
+  }
+} 

@@ -1,0 +1,64 @@
+{
+  "app": {
+    "title": "Test de Personnalité Teto-Egen",
+    "description": "Découvrez votre type de personnalité Teto-Egen!",
+    "metaDescription": "Découvrez votre type de personnalité Teto-Egen!"
+  },
+  "startScreen": {
+    "mainTitle": "Test de Personnalité Teto-Egen",
+    "intro": "Découvrez si vous êtes un Homme Teto, une Femme Teto, un Homme Egen ou une Femme Egen grâce à un sondage et une analyse faciale!",
+    "startButton": "Commencer le Test",
+    "infoTitle": "Qu'est-ce que le Type de Personnalité Teto-Egen?",
+    "infoDescription": "Le type de personnalité Teto-Egen est un système de classification qui distingue la masculinité et la féminité basé sur les caractéristiques sociales et comportementales.",
+    "moreInfoButton": "En Savoir Plus",
+    "foodChainTitle": "Chaîne Alimentaire des Rencontres",
+    "testInfo": {
+      "timeRequired": "Temps Requis",
+      "timeValue": "Environ 3 min",
+      "questionCount": "Questions",
+      "questionValue": "10",
+      "photoUpload": "Upload Photo",
+      "photoValue": "Optionnel"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "Homme Teto",
+        "traits": "Logique, Défiant"
+      },
+      "tetoFemale": {
+        "title": "Femme Teto",
+        "traits": "Énergique, Direct"
+      },
+      "egenMale": {
+        "title": "Homme Egen",
+        "traits": "Sensible, Empathique"
+      },
+      "egenFemale": {
+        "title": "Femme Egen",
+        "traits": "Calme, Émotionnel"
+      }
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "save": "Sauvegarder",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "refresh": "Actualiser",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Soumettre",
+    "reset": "Reset",
+    "clear": "Effacer"
+  }
+} 

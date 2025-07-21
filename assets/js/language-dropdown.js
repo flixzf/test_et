@@ -190,10 +190,10 @@ const languageDropdown = (function () {
                 transform: translateX(5px);
             }
             
-            /* RTL support */
+            /* RTL support - 오른쪽 위치 유지 */
             [dir="rtl"] .language-dropdown {
-                left: 15px;
-                right: auto;
+                right: 20px !important;
+                left: auto !important;
             }
             
             [dir="rtl"] .language-dropdown .dropdown-item:hover {
@@ -204,7 +204,8 @@ const languageDropdown = (function () {
             @media (max-width: 576px) {
                 .language-dropdown {
                     top: 10px;
-                    right: 10px;
+                    right: 10px !important;
+                    left: auto !important;
                 }
                 
                 .language-dropdown .language-name {

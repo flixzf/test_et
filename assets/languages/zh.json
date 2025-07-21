@@ -5,7 +5,11 @@
     "metaDescription": "发现你的特托-埃根性格类型！"
   },
   "startScreen": {
-    "mainTitle": "特托-埃根性格测试",
+    "mainTitle": "只需2分钟！你的特托-埃根性格是什么？",
+    "typingTexts": [
+      "我想了解自己是什么样的人？",
+      "别人怎么看我？"
+    ],
     "intro": "通过问卷调查和面部分析，了解你是特托男、特托女、埃根男还是埃根女！",
     "startButton": "开始测试",
     "infoTitle": "什么是特托-埃根性格类型？",

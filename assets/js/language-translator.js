@@ -387,6 +387,11 @@ const languageTranslator = (function() {
                     // Update language dropdown if it exists
                     updateLanguageDropdown();
                     
+                    // Update typing animation if it exists
+                    if (typeof window.updateTypingAnimation === 'function') {
+                        window.updateTypingAnimation();
+                    }
+                    
                     // Manage cache size after language change
                     manageTranslationCacheSize();
                     

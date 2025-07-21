@@ -126,11 +126,30 @@ function addTypingAnimation() {
         switchDelay: 300    // 텍스트 전환 대기 시간 (ms)
     };
     
-    // 표시할 텍스트 배열
-    const texts = [        
-        "내가 어떤 사람인지 알고 싶다면?",        
-        "다른 사람들은 나를 어떻게 생각할까?"
-    ];
+    // 표시할 텍스트 배열 (번역 시스템에서 가져오기)
+    function getTypingTexts() {
+        try {
+            const currentLang = window.languageUtils ? window.languageUtils.getCurrentLanguage().code : 'ko';
+            const langKey = 'startScreen.typingTexts';
+            
+            if (window.languageTranslator && window.languageTranslator.translate) {
+                const translatedTexts = window.languageTranslator.translate(langKey);
+                if (Array.isArray(translatedTexts) && translatedTexts.length > 0) {
+                    return translatedTexts;
+                }
+            }
+        } catch (error) {
+            console.warn('타이핑 텍스트 번역 실패:', error);
+        }
+        
+        // 기본값 (한국어)
+        return [
+            "내가 어떤 사람인지 알고 싶다면?",        
+            "다른 사람들은 나를 어떻게 생각할까?"
+        ];
+    }
+    
+    let texts = getTypingTexts();
     
     let currentIndex = 0;
     let isAnimating = false;
@@ -209,6 +228,19 @@ function addTypingAnimation() {
     function stopAnimation() {
         isAnimating = false;
     }
+    
+    /**
+     * 언어 변경 시 타이핑 텍스트 업데이트
+     */
+    function updateTypingTexts() {
+        stopAnimation();
+        texts = getTypingTexts();
+        currentIndex = 0;
+        startAnimation();
+    }
+    
+    // 언어 변경 이벤트 리스너 (전역으로 노출)
+    window.updateTypingAnimation = updateTypingTexts;
     
     // 애니메이션 시작
     startAnimation();
