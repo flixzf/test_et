@@ -147,6 +147,13 @@ function optimizeImage(imageElement) {
  */
 function lazyLoad(resourceType, url) {
     return new Promise((resolve, reject) => {
+        // undefined 체크 및 기본값 설정
+        if (!resourceType) {
+            console.warn('리소스 타입이 정의되지 않았습니다. 기본값 사용');
+            resolve();
+            return;
+        }
+        
         switch (resourceType) {
             case 'script':
                 const script = document.createElement('script');
@@ -175,9 +182,60 @@ function lazyLoad(resourceType, url) {
                 break;
                 
             default:
-                reject(new Error(`지원하지 않는 리소스 유형: ${resourceType}`));
+                console.warn(`지원하지 않는 리소스 유형: ${resourceType}`);
+                resolve(); // 에러 대신 resolve로 처리
         }
     });
+}
+
+/**
+ * Lazy Load 요소들을 확인하고 처리하는 함수
+ */
+function checkLazyLoadElements() {
+    try {
+        // data-src 속성을 가진 이미지들 찾기
+        const lazyImages = document.querySelectorAll('img[data-src]:not([src])');
+        let processed = 0;
+        
+        lazyImages.forEach(img => {
+            if (isElementInViewport(img)) {
+                if (img.dataset.src) {
+                    lazyLoad('image', img.dataset.src)
+                        .then(() => {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            processed++;
+                        })
+                        .catch(err => console.warn('이미지 로딩 실패:', err));
+                }
+            }
+        });
+        
+        return { processed, total: lazyImages.length };
+    } catch (error) {
+        console.warn('Lazy load 요소 확인 중 오류:', error);
+        return { processed: 0, total: 0 };
+    }
+}
+
+/**
+ * 요소가 뷰포트에 있는지 확인하는 함수
+ */
+function isElementInViewport(element) {
+    if (!element || !element.getBoundingClientRect) {
+        return false;
+    }
+    
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= windowHeight &&
+        rect.right <= windowWidth
+    );
 }
 
 /**
@@ -296,6 +354,8 @@ window.performanceOptimizer = {
     optimizeImage,
     lazyLoad,
     setupLazyLoading: lazyLoad, // lazyLoad 함수를 setupLazyLoading으로도 사용
+    checkLazyLoadElements, // 새로 추가된 함수
+    isElementInViewport, // 새로 추가된 함수
     debounce,
     throttle,
     cleanupMemory,
