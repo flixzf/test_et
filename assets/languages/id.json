@@ -1,0 +1,177 @@
+{
+  "app": {
+    "title": "Tes Kepribadian Teto-Egen",
+    "description": "Temukan tipe kepribadian Teto-Egen Anda!",
+    "metaDescription": "Temukan tipe kepribadian Teto-Egen Anda!"
+  },
+  "startScreen": {
+    "mainTitle": "Tes Kepribadian Teto-Egen",
+    "intro": "Temukan apakah Anda termasuk Teto Pria, Teto Wanita, Egen Pria, atau Egen Wanita melalui survei dan foto wajah!",
+    "startButton": "Mulai Tes",
+    "infoTitle": "Apa itu Tipe Kepribadian Teto-Egen?",
+    "infoDescription": "Tipe kepribadian Teto-Egen adalah klasifikasi yang membedakan maskulinitas dan feminitas berdasarkan karakteristik sosial dan perilaku. Teto menunjukkan kecenderungan agresif dan logis, sedangkan Egen menunjukkan kecenderungan halus dan emosional.",
+    "moreInfoButton": "Pelajari Lebih Lanjut",
+    "foodChainTitle": "Rantai Makanan Percintaan",
+    "testInfo": {
+      "timeRequired": "Waktu Diperlukan",
+      "timeValue": "Sekitar 3 menit",
+      "questionCount": "Jumlah Pertanyaan",
+      "questionValue": "10 pertanyaan",
+      "photoUpload": "Upload Foto",
+      "photoValue": "Opsional"
+    },
+    "personalityTypeCards": {
+      "tetoMale": {
+        "title": "Teto Pria",
+        "traits": "Logis, Menantang"
+      },
+      "tetoFemale": {
+        "title": "Teto Wanita",
+        "traits": "Aktif, Terus terang"
+      },
+      "egenMale": {
+        "title": "Egen Pria",
+        "traits": "Halus, Kreatif"
+      },
+      "egenFemale": {
+        "title": "Egen Wanita",
+        "traits": "Tenang, Perhatian"
+      }
+    }
+  },
+  "survey": {
+    "progressLabel": "Progress",
+    "question": "Pertanyaan",
+    "nextButton": "Selanjutnya",
+    "previousButton": "Sebelumnya",
+    "submitButton": "Kirim",
+    "categories": {
+      "personality": "Kepribadian",
+      "behavior": "Perilaku",
+      "preference": "Preferensi",
+      "relationship": "Hubungan",
+      "values": "Nilai-nilai"
+    }
+  },
+  "photoUpload": {
+    "title": "Upload Foto Wajah (Opsional)",
+    "description": "AI akan menganalisis foto wajah Anda untuk hasil yang lebih akurat.",
+    "dragDrop": "Drag & drop foto atau klik untuk memilih",
+    "supportedFormats": "Format yang didukung: JPG, PNG, WEBP",
+    "maxSize": "Ukuran maksimal: 5MB",
+    "uploadButton": "Upload Foto",
+    "skipButton": "Lewati",
+    "processing": "Memproses...",
+    "cameraButton": "Ambil dengan Kamera",
+    "privacy": "Foto Anda akan diproses secara lokal dan tidak disimpan."
+  },
+  "results": {
+    "title": "Hasil Tes Kepribadian Anda",
+    "yourType": "Tipe Kepribadian Anda:",
+    "description": "Deskripsi",
+    "characteristics": "Karakteristik",
+    "compatibility": "Kompatibilitas",
+    "detailedAnalysis": "Analisis Detail",
+    "facialAnalysis": "Analisis Wajah",
+    "shareButton": "Bagikan Hasil",
+    "retakeButton": "Ulangi Tes",
+    "downloadButton": "Unduh Hasil"
+  },
+  "personality": {
+    "tetoMale": {
+      "name": "Teto Pria",
+      "description": "Pria yang menunjukkan kualitas maskulin yang kuat dalam karakteristik sosial dan perilaku. Mereka memiliki kepemimpinan yang kuat, lebih memilih pemikiran logis dan analitis.",
+      "characteristics": [
+        "Agresivitas dan insting berburu yang kuat",
+        "Memiliki kepemimpinan dan asertif yang kuat",
+        "Mengutamakan logika daripada emosi",
+        "Terbiasa dengan kehidupan berkelompok atau memiliki banyak teman",
+        "Tertarik pada dunia luar",
+        "Suka menganalisis dan menilai, berorientasi pada realitas",
+        "Lebih memilih hasil praktis daripada ide abstrak",
+        "Sederhana dan tegas dalam keputusan",
+        "Menyukai tantangan dan petualangan",
+        "Sering tidak terlalu peduli dengan fashion dan parfum"
+      ]
+    },
+    "tetoFemale": {
+      "name": "Teto Wanita",
+      "description": "Wanita yang aktif dan penuh energi, memiliki kemampuan sosial yang baik dan lingkaran pertemanan yang luas. Mereka lebih memilih ekspresi langsung dan jujur.",
+      "characteristics": [
+        "Kepribadian aktif dan penuh energi",
+        "Kemampuan sosial yang baik dan lingkaran pertemanan yang luas",
+        "Lebih memilih ekspresi langsung dan jujur",
+        "Berorientasi pada tujuan dengan keinginan berprestasi yang kuat",
+        "Menyukai kompetisi dan situasi yang menantang",
+        "Ekspresi emosi yang kaya dan bergairah",
+        "Lebih memilih pendekatan praktis dan realistis",
+        "Kecenderungan mandiri dan self-directed yang kuat",
+        "Memiliki daya pengambilan keputusan dan pengambilan keputusan yang cepat",
+        "Ekstrovert dan menyukai aktivitas sosial"
+      ]
+    },
+    "egenMale": {
+      "name": "Egen Pria",
+      "description": "Pria dengan kecenderungan halus dan emosional. Mereka sensitif terhadap tren, tertarik pada fashion dan kecantikan, serta memiliki kemampuan empati yang excellent.",
+      "characteristics": [
+        "Memiliki kecenderungan halus dan emosional",
+        "Sensitif terhadap tren dan tertarik pada fashion serta kecantikan",
+        "Memahami emosi orang lain dengan baik dan memiliki kemampuan empati yang excellent",
+        "Kecenderungan pasifis yang mengutamakan harmoni dan keseimbangan",
+        "Kaya akan rasa artistik dan kreativitas",
+        "Menunjukkan perhatian dan kebaikan yang detail",
+        "Lebih memilih kompromi dan penyesuaian daripada konflik",
+        "Ekspresi emosi yang kaya dan kemampuan komunikasi yang baik",
+        "Mengutamakan nilai estetika",
+        "Mencari pertukaran yang mendalam dalam hubungan manusia"
+      ]
+    },
+    "egenFemale": {
+      "name": "Egen Wanita",
+      "description": "Wanita dengan kecenderungan tenang dan internal yang kuat. Mereka halus dan kaya akan sensitivitas, bereaksi sensitif terhadap emosi orang lain.",
+      "characteristics": [
+        "Kecenderungan tenang dan internal yang kuat",
+        "Halus dan kaya akan sensitivitas",
+        "Bereaksi sensitif terhadap emosi orang lain",
+        "Menunjukkan sikap tenang dan hati-hati",
+        "Lebih memilih lingkungan yang stabil dan nyaman",
+        "Mengutamakan hubungan dan komunikasi yang mendalam",
+        "Rasa artistik dan estetika yang excellent",
+        "Tertarik pada refleksi diri dan pertumbuhan internal",
+        "Memiliki kecenderungan altruistik dengan kepedulian yang mendalam",
+        "Memiliki karakteristik intuitif dan wawasan"
+      ]
+    }
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba Lagi",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "close": "Tutup",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "edit": "Edit",
+    "view": "Lihat",
+    "search": "Cari",
+    "filter": "Filter",
+    "sort": "Urutkan",
+    "refresh": "Refresh",
+    "back": "Kembali",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "submit": "Kirim",
+    "reset": "Reset",
+    "clear": "Bersihkan"
+  },
+  "errors": {
+    "network": "Kesalahan jaringan. Periksa koneksi internet Anda.",
+    "server": "Kesalahan server. Silakan coba lagi nanti.",
+    "validation": "Harap periksa input Anda.",
+    "fileUpload": "Gagal mengunggah file.",
+    "camera": "Tidak dapat mengakses kamera.",
+    "photoProcessing": "Gagal memproses foto.",
+    "generic": "Terjadi kesalahan yang tidak diketahui."
+  }
+} 
