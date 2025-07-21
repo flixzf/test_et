@@ -4,7 +4,7 @@
  */
 
 // Language dropdown module
-const languageDropdown = (function() {
+const languageDropdown = (function () {
     /**
      * Create the language dropdown HTML
      * @returns {string} HTML for the language dropdown
@@ -12,7 +12,7 @@ const languageDropdown = (function() {
     function createDropdownHTML() {
         const currentLanguage = window.languageUtils.getCurrentLanguage();
         const supportedLanguages = window.languageUtils.getSupportedLanguages();
-        
+
         // Create dropdown button HTML
         let html = `
             <div class="language-dropdown dropdown">
@@ -22,7 +22,7 @@ const languageDropdown = (function() {
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
         `;
-        
+
         // Add language options
         supportedLanguages.forEach(language => {
             const isActive = language.code === currentLanguage.code;
@@ -35,16 +35,16 @@ const languageDropdown = (function() {
                 </li>
             `;
         });
-        
+
         // Close dropdown HTML
         html += `
                 </ul>
             </div>
         `;
-        
+
         return html;
     }
-    
+
     /**
      * Initialize the language dropdown
      * @param {string} containerId - ID of the container element
@@ -56,16 +56,16 @@ const languageDropdown = (function() {
             console.warn(`Language dropdown container not found: #${containerId}`);
             return;
         }
-        
+
         // Create and insert the dropdown HTML
         container.innerHTML = createDropdownHTML();
-        
+
         // Add event listeners to language options
         const languageOptions = container.querySelectorAll('.dropdown-item');
         languageOptions.forEach(option => {
-            option.addEventListener('click', function(event) {
+            option.addEventListener('click', function (event) {
                 event.preventDefault();
-                
+
                 const langCode = this.getAttribute('data-language');
                 if (langCode) {
                     // Change the language
@@ -79,13 +79,13 @@ const languageDropdown = (function() {
                 }
             });
         });
-        
+
         // Add CSS styles
         addStyles();
-        
+
         console.log('Language dropdown initialized');
     }
-    
+
     /**
      * Add CSS styles for the language dropdown
      */
@@ -94,18 +94,18 @@ const languageDropdown = (function() {
         if (document.getElementById('language-dropdown-styles')) {
             return;
         }
-        
+
         // Create style element
         const style = document.createElement('style');
         style.id = 'language-dropdown-styles';
-        
+
         // Add CSS rules
         style.textContent = `
             .language-dropdown {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                z-index: 1000;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1050;
             }
             
             .language-dropdown .dropdown-toggle {
@@ -128,9 +128,13 @@ const languageDropdown = (function() {
             }
             
             .language-dropdown .dropdown-toggle::before {
-                content: "🌐";
+                content: "";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content: "\f0ac"; /* Globe icon */
                 font-size: 16px;
-                margin-right: 5px;
+                margin-right: 8px;
+                color: #0d6efd;
             }
             
             .language-dropdown .flag-icon {
@@ -139,6 +143,12 @@ const languageDropdown = (function() {
                 object-fit: cover;
                 border-radius: 3px;
                 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .language-dropdown .dropdown-item:hover .flag-icon {
+                transform: scale(1.1);
             }
             
             .language-dropdown .language-name {
@@ -210,11 +220,11 @@ const languageDropdown = (function() {
                 }
             }
         `;
-        
+
         // Add style to document head
         document.head.appendChild(style);
     }
-    
+
     // Public API
     return {
         init,

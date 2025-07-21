@@ -112,8 +112,8 @@ function initScrollAnimations() {
  */
 function addTypingAnimation() {
     const texts = [
-        "나는 누구인가?",
-        "다른 사람들은 나를 어떻게 판단할까?",
+        /*"나는 누구인가?",
+        "다른 사람들은 나를 어떻게 생각할까?",*/
         "나의 진짜 성격은 무엇일까?",
         "내가 어떤 사람인지 알고 싶다면?"
     ];
